@@ -1,7 +1,18 @@
-// Synthesised key-click sounds via Web Audio (no audio assets needed).
+// Synthesised key-click sounds via Web Audio (8 distinct keyboard profiles, no external audio assets needed).
 import type { SoundPack } from './settings.svelte';
 
 export type ClickKind = 'key' | 'space' | 'back' | 'error';
+
+export const SOUND_PACKS: { id: SoundPack; label: string; desc: string }[] = [
+  { id: 'mechanical', label: 'Mechanical', desc: 'Crisp tactile click + low bottom-out' },
+  { id: 'topre', label: 'Topre Thock', desc: 'Deep electrostatic capacitive dome thock' },
+  { id: 'holy-panda', label: 'Holy Panda', desc: 'Snappy high-pitched tactile pop' },
+  { id: 'model-m', label: 'IBM Model M', desc: 'Classic buckling-spring metallic ping' },
+  { id: 'soft', label: 'Silent Linear', desc: 'Dampened low-pass linear switch' },
+  { id: 'laptop', label: 'Scissor Laptop', desc: 'Ultra-short low-travel chiclet tap' },
+  { id: 'typewriter', label: 'Typewriter', desc: 'Vintage hammer strike + heavy spacebar' },
+  { id: 'pop', label: 'Bubble Pop', desc: 'Playful pitch-drop bubble tone' },
+];
 
 let ctx: AudioContext | null = null;
 let noise: AudioBuffer | null = null;
@@ -92,12 +103,32 @@ export function playClick(pack: SoundPack, volume: number, kind: ClickKind) {
   const big = kind === 'space';
   switch (pack) {
     case 'mechanical':
-      // sharp click + low "thock"
       noiseBurst(c, master, t, 'bandpass', big ? 1800 : 3200, 1.2, 0.9, big ? 0.045 : 0.03);
       tone(c, master, t, 'sine', big ? 120 : 190, big ? 70 : 110, big ? 0.6 : 0.4, big ? 0.07 : 0.045);
       break;
+    case 'topre':
+      // Deep, rounded rubber-dome thock
+      noiseBurst(c, master, t, 'lowpass', big ? 620 : 920, 1.4, 0.85, big ? 0.065 : 0.048);
+      tone(c, master, t, 'sine', big ? 105 : 148, big ? 58 : 78, big ? 0.75 : 0.58, big ? 0.08 : 0.055);
+      break;
+    case 'holy-panda':
+      // Crisp high-mid polycarbonate snap + double-stage tactile feel
+      noiseBurst(c, master, t, 'bandpass', big ? 1900 : 2750, 2.2, 0.95, 0.022);
+      tone(c, master, t + 0.004, 'triangle', big ? 210 : 320, big ? 95 : 145, 0.55, big ? 0.055 : 0.038);
+      break;
+    case 'model-m':
+      // Metallic buckling spring snap + faint harmonic ping
+      noiseBurst(c, master, t, 'highpass', 3400, 1.6, 0.85, 0.024);
+      tone(c, master, t, 'sawtooth', big ? 160 : 260, big ? 90 : 140, 0.25, 0.04);
+      tone(c, master, t + 0.003, 'sine', big ? 1480 : 2150, big ? 1420 : 2080, 0.09, 0.11);
+      break;
     case 'soft':
       noiseBurst(c, master, t, 'lowpass', big ? 700 : 1100, 0.7, 0.8, big ? 0.05 : 0.03);
+      break;
+    case 'laptop':
+      // Short, tight scissor-switch tap
+      noiseBurst(c, master, t, 'bandpass', big ? 2200 : 3800, 0.9, 0.65, 0.015);
+      tone(c, master, t, 'sine', big ? 160 : 250, 110, 0.28, 0.02);
       break;
     case 'typewriter':
       noiseBurst(c, master, t, 'highpass', 2500, 0.8, 0.7, 0.025);
@@ -109,8 +140,6 @@ export function playClick(pack: SoundPack, volume: number, kind: ClickKind) {
       break;
   }
   if (kind === 'back') {
-    // slightly duller
     master.gain.value *= 0.7;
   }
 }
-

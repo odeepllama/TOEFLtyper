@@ -506,6 +506,21 @@
           Practice in a faithful replica of the ETS test-center interface with authentic 2026 task types, section countdowns,
           built-in macOS voice audio, microphone recording, and instant diagnostic explanations.
         </p>
+
+        <div class="test-selector">
+          <span class="sub">Select Practice Test:</span>
+          {#each MOCK_TESTS as mt}
+            <button
+              class="btn"
+              class:primary={selectedTestId === mt.id}
+              onclick={() => (selectedTestId = mt.id)}
+              title={mt.subtitle}
+            >
+              {mt.title}
+            </button>
+          {/each}
+        </div>
+        <p class="test-subtitle sub">{currentTest.subtitle}</p>
       </div>
       <div class="lobby-actions">
         <button class="btn primary" onclick={() => startExam(['reading', 'listening', 'writing', 'speaking'], false)}>
@@ -589,7 +604,7 @@
   </section>
 {:else if active && !finished}
   <!-- Authentic ETS Test-Center Chrome -->
-  <div class="ets-shell">
+  <div class="ets-shell" style="--ets-scale: {(settings.etsZoom ?? 100) / 100}">
     <header class="ets-bar">
       <div class="ets-brand">
         <span class="ets-logo">ETS</span>
@@ -601,6 +616,19 @@
       </div>
 
       <div class="ets-controls">
+        <div class="ets-zoom" title="ETS Display Text Size (Ctrl +/- is disabled in real ETS secure browser)">
+          <span class="zoom-lbl">Text:</span>
+          {#each [100, 125, 150] as z}
+            <button
+              class="ets-btn zoom-btn"
+              class:primary={settings.etsZoom === z}
+              onclick={() => (settings.etsZoom = z as 100 | 125 | 150)}
+            >
+              {z}%
+            </button>
+          {/each}
+        </div>
+
         {#if !untimedMode}
           <div class="ets-timer">
             {#if !hideTime}
@@ -1229,6 +1257,17 @@
     margin: 0;
     max-width: 680px;
   }
+  .test-selector {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-top: 0.85rem;
+  }
+  .test-subtitle {
+    margin-top: 0.45rem !important;
+    font-size: 0.86rem;
+  }
   .lobby-actions {
     display: flex;
     gap: 0.65rem;
@@ -1283,14 +1322,16 @@
     font-size: 0.9rem;
   }
 
-  /* Authentic ETS Test-Center Interface Styles */
+  /* Authentic ETS Test-Center Interface Styles (100% matches 1024x768 monitor physical scale) */
   .ets-shell {
+    --ets-scale: 1;
     min-height: 100vh;
     background: #f4f6f9;
     color: #1a212c;
     display: flex;
     flex-direction: column;
     font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: calc(18px * var(--ets-scale));
   }
   .ets-bar {
     background: #0d3b66;
@@ -1298,10 +1339,11 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0.65rem 1.4rem;
+    padding: 0.7rem 1.4rem;
     border-bottom: 3px solid #f4b942;
     flex-wrap: wrap;
     gap: 0.75rem;
+    font-size: 16px;
   }
   .ets-brand {
     display: flex;
@@ -1318,10 +1360,10 @@
   }
   .ets-title {
     font-weight: 600;
-    font-size: 0.98rem;
+    font-size: 1.02rem;
   }
   .ets-step {
-    font-size: 0.92rem;
+    font-size: 0.96rem;
     font-weight: 600;
     background: rgba(255, 255, 255, 0.12);
     padding: 0.25rem 0.75rem;
@@ -1333,6 +1375,24 @@
     gap: 0.5rem;
     flex-wrap: wrap;
   }
+  .ets-zoom {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    margin-right: 0.45rem;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0.2rem 0.45rem;
+    border-radius: 6px;
+  }
+  .zoom-lbl {
+    font-size: 0.78rem;
+    opacity: 0.9;
+    margin-right: 0.15rem;
+  }
+  .zoom-btn {
+    padding: 0.22rem 0.5rem !important;
+    font-size: 0.78rem !important;
+  }
   .ets-timer {
     display: flex;
     align-items: center;
@@ -1341,14 +1401,14 @@
   }
   .clock {
     font-family: var(--font-mono);
-    font-size: 1.05rem;
+    font-size: 1.1rem;
     font-weight: 700;
   }
   .clock.urgent {
     color: #ff9b85;
   }
   .ets-untimed {
-    font-size: 0.82rem;
+    font-size: 0.85rem;
     opacity: 0.85;
     margin-right: 0.5rem;
   }
@@ -1357,9 +1417,9 @@
     color: #0d3b66;
     border: 1px solid #cbd5e1;
     border-radius: 5px;
-    padding: 0.38rem 0.85rem;
+    padding: 0.4rem 0.9rem;
     font-weight: 600;
-    font-size: 0.86rem;
+    font-size: 0.9rem;
   }
   .ets-btn:disabled {
     opacity: 0.45;
@@ -1390,7 +1450,7 @@
   }
   .ets-stage {
     flex: 1;
-    max-width: 1220px;
+    max-width: 1180px;
     width: 100%;
     margin: 0 auto;
     padding: 1.5rem;
@@ -1399,14 +1459,14 @@
     background: #ffffff;
     border: 1px solid #cbd5e1;
     border-radius: 8px;
-    padding: 1.75rem;
+    padding: 2rem;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
   }
   .ets-split-pane {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1.25rem;
-    min-height: 72vh;
+    min-height: 75vh;
   }
   @media (max-width: 860px) {
     .ets-split-pane {
@@ -1418,34 +1478,35 @@
     background: #ffffff;
     border: 1px solid #cbd5e1;
     border-radius: 8px;
-    padding: 1.5rem;
+    padding: 1.65rem;
     overflow-y: auto;
   }
   .ets-directions {
     background: #edf2f7;
     border-left: 4px solid #0d3b66;
-    padding: 0.65rem 0.9rem;
-    font-size: 0.9rem;
-    margin-bottom: 1.1rem;
+    padding: 0.75rem 1rem;
+    font-size: 0.95em;
+    line-height: 1.5;
+    margin-bottom: 1.2rem;
   }
   .ets-passage-title {
     margin: 0 0 1rem;
     color: #0d3b66;
-    font-size: 1.3rem;
+    font-size: 1.35em;
   }
   .ets-para {
-    line-height: 1.72;
-    margin: 0 0 1rem;
-    font-size: 0.98rem;
+    line-height: 1.75;
+    margin: 0 0 1.1rem;
+    font-size: 1em;
   }
   .para-num {
     color: #64748b;
     font-weight: 700;
-    font-size: 0.82rem;
+    font-size: 0.85em;
   }
   .cw-paragraph {
-    line-height: 2.3;
-    font-size: 1.05rem;
+    line-height: 2.35;
+    font-size: 1.08em;
   }
   .cw-word {
     white-space: nowrap;
@@ -1456,68 +1517,76 @@
   }
   .cw-input {
     font-family: var(--font-mono);
-    font-size: 1rem;
+    font-size: 1em;
     border: none;
     border-bottom: 2px solid #0d3b66;
     background: #eef4fb;
     color: #0f172a;
-    padding: 0.1rem 0.25rem;
+    padding: 0.12rem 0.3rem;
   }
   .cw-len {
     color: #64748b;
-    font-size: 0.75rem;
-    margin-left: 2px;
+    font-size: 0.76em;
+    margin-left: 3px;
   }
   .doc-frame {
     border: 1px solid #cbd5e1;
     border-radius: 6px;
-    padding: 1rem;
+    padding: 1.15rem;
     background: #fafbfc;
   }
   .doc-badge,
   .discipline-tag,
   .audio-kind {
     display: inline-block;
-    font-size: 0.72rem;
+    font-size: 0.75em;
     font-weight: 700;
     color: #0d3b66;
     background: #e0ecf8;
-    padding: 0.15rem 0.5rem;
+    padding: 0.18rem 0.55rem;
     border-radius: 4px;
-    margin-bottom: 0.4rem;
+    margin-bottom: 0.45rem;
   }
   .doc-meta {
-    font-size: 0.84rem;
+    font-size: 0.88em;
     color: #475569;
     border-bottom: 1px solid #e2e8f0;
-    padding-bottom: 0.5rem;
-    margin-bottom: 0.75rem;
+    padding-bottom: 0.55rem;
+    margin-bottom: 0.85rem;
   }
   .doc-body {
     white-space: pre-wrap;
     font-family: inherit;
-    line-height: 1.6;
+    font-size: 1em;
+    line-height: 1.65;
     margin: 0;
   }
   .ets-q-prompt {
     font-weight: 700;
-    font-size: 1.04rem;
-    margin: 0 0 1rem;
+    font-size: 1.08em;
+    line-height: 1.45;
+    margin: 0 0 1.1rem;
   }
   .ets-options {
     display: flex;
     flex-direction: column;
-    gap: 0.65rem;
+    gap: 0.75rem;
   }
   .ets-option {
     display: flex;
     align-items: flex-start;
-    gap: 0.65rem;
-    padding: 0.75rem 0.9rem;
+    gap: 0.75rem;
+    padding: 0.85rem 1rem;
     border: 1px solid #cbd5e1;
     border-radius: 6px;
     cursor: pointer;
     background: #ffffff;
+    font-size: 1em;
+    line-height: 1.45;
+  }
+  .ets-option input[type='radio'] {
+    transform: scale(1.25);
+    margin-top: 0.22em;
   }
   .ets-option.selected {
     border-color: #0d3b66;
@@ -1529,15 +1598,15 @@
     align-items: center;
     flex-wrap: wrap;
     gap: 1rem;
-    padding: 1.15rem;
+    padding: 1.25rem;
     background: #f8fafc;
     border: 1px solid #cbd5e1;
     border-radius: 8px;
-    margin-bottom: 1.25rem;
+    margin-bottom: 1.35rem;
   }
   .audio-card h2 {
     margin: 0.2rem 0;
-    font-size: 1.15rem;
+    font-size: 1.2em;
   }
   .audio-card p {
     margin: 0;
@@ -1561,16 +1630,16 @@
     transition: width 0.15s;
   }
   .bs-context {
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.85rem;
   }
   .bs-preview {
-    min-height: 3.4rem;
-    padding: 0.85rem 1rem;
+    min-height: 3.6rem;
+    padding: 0.95rem 1.1rem;
     border: 2px dashed #94a3b8;
     border-radius: 8px;
     background: #f8fafc;
-    margin-bottom: 1rem;
-    font-size: 1.08rem;
+    margin-bottom: 1.1rem;
+    font-size: 1.1em;
   }
   .bs-placeholder {
     color: #64748b;
@@ -1582,16 +1651,17 @@
   .bs-chunks {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.55rem;
-    margin-bottom: 1rem;
+    gap: 0.6rem;
+    margin-bottom: 1.1rem;
   }
   .bs-chunk {
     background: #ffffff;
     border: 1px solid #0d3b66;
     color: #0d3b66;
-    padding: 0.45rem 0.85rem;
+    padding: 0.55rem 0.95rem;
     border-radius: 6px;
     font-weight: 600;
+    font-size: 1em;
   }
   .bs-chunk.used {
     background: #0d3b66;
@@ -1600,10 +1670,10 @@
   .email-header {
     background: #f1f5f9;
     border: 1px solid #cbd5e1;
-    padding: 0.65rem 0.85rem;
+    padding: 0.7rem 0.9rem;
     border-radius: 6px;
-    font-size: 0.88rem;
-    margin-bottom: 0.65rem;
+    font-size: 0.92em;
+    margin-bottom: 0.7rem;
   }
   .editor-toolbar {
     display: flex;
@@ -1611,17 +1681,17 @@
     align-items: center;
     flex-wrap: wrap;
     gap: 0.5rem;
-    margin-bottom: 0.5rem;
-    font-size: 0.85rem;
+    margin-bottom: 0.55rem;
+    font-size: 0.88em;
   }
   .ets-editor {
     width: 100%;
     border: 1px solid #94a3b8;
     border-radius: 6px;
-    padding: 0.75rem;
+    padding: 0.85rem;
     font-family: 'Segoe UI', Arial, sans-serif;
-    font-size: 0.96rem;
-    line-height: 1.55;
+    font-size: 1em;
+    line-height: 1.6;
     background: #ffffff;
     color: #0f172a;
   }
@@ -1629,10 +1699,11 @@
   .student-box {
     border: 1px solid #cbd5e1;
     border-radius: 6px;
-    padding: 0.85rem;
-    margin-bottom: 0.75rem;
+    padding: 0.95rem;
+    margin-bottom: 0.8rem;
     background: #f8fafc;
-    font-size: 0.92rem;
+    font-size: 0.96em;
+    line-height: 1.55;
   }
   .speak-btns {
     display: flex;

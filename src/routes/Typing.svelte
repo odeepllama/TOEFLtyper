@@ -1,9 +1,10 @@
 <script lang="ts">
   import { onMount, onDestroy, tick } from 'svelte';
-  import { settings, type Mode, type Source, type SoundPack } from '../lib/settings.svelte';
-  import { createStream, lookupAwl, AWL, type AwlEntry, type WordStream } from '../lib/words';
-  import { playClick } from '../lib/sound';
+  import { settings, rerollWatchAlias, type Mode, type Source, type SoundPack } from '../lib/settings.svelte';
+  import { createStream, lookupAwl, type AwlEntry, type WordStream } from '../lib/words';
+  import { playClick, SOUND_PACKS } from '../lib/sound';
   import { saveResult, bestFor, type TestResult, type Sample, type KeyStat } from '../lib/storage';
+  import { analyzeKeystrokeTelemetry, type KeyEventLog, type TelemetryReport } from '../lib/diagnostics';
   import LineChart from '../components/LineChart.svelte';
   import Keyboard from '../components/Keyboard.svelte';
 
@@ -24,6 +25,7 @@
 
   // Timing & Live stats
   let startTime = $state(0);
+  let lastKeystrokeMs = 0;
   let elapsed = $state(0);
   let liveWpm = $state(0);
   let liveRaw = $state(0);
@@ -35,6 +37,7 @@
   let intervalKeys = 0;
   let samples: Sample[] = [];
   let keyStats: Record<string, KeyStat> = {};
+  let eventLogs: KeyEventLog[] = [];
   let timerId: ReturnType<typeof setInterval> | null = null;
   let stream: WordStream | null = null;
 
@@ -42,8 +45,9 @@
   let lastKeyPressed = $state<string | null>(null);
   let lastKeyOk = $state(true);
 
-  // Results
+  // Results & Telemetry
   let lastResult = $state<TestResult | null>(null);
+  let telemetry = $state<TelemetryReport | null>(null);
   let prevBest = $state<TestResult | null>(null);
   let isNewPb = $state(false);
   let hoveredAwl = $state<AwlEntry | null>(null);
@@ -74,6 +78,7 @@
     status = 'idle';
     wi = 0;
     elapsed = 0;
+    lastKeystrokeMs = 0;
     liveWpm = 0;
     liveRaw = 0;
     liveAcc = 100;
@@ -84,7 +89,9 @@
     intervalKeys = 0;
     samples = [];
     keyStats = {};
+    eventLogs = [];
     lastResult = null;
+    telemetry = null;
     hoveredAwl = null;
     lineOffset = 0;
     lastKeyPressed = null;
@@ -110,12 +117,14 @@
   }
 
   function startTimer() {
-    startTime = performance.now();
+    const now = performance.now();
+    startTime = now;
+    lastKeystrokeMs = now;
     status = 'running';
     let lastSec = 0;
     timerId = setInterval(() => {
-      const now = performance.now();
-      elapsed = (now - startTime) / 1000;
+      const curNow = performance.now();
+      elapsed = (curNow - startTime) / 1000;
       const mins = Math.max(elapsed / 60, 1 / 60);
       liveWpm = Math.round(correctKeys / 5 / mins);
       liveRaw = Math.round(totalKeys / 5 / mins);
@@ -197,6 +206,13 @@
       samples.push({ wpm: finalWpm, raw: finalRaw, err: cIncorrect + cExtra });
     }
 
+    // Run sequencing, timing, transposition, and delete-trigger telemetry analysis
+    const report = analyzeKeystrokeTelemetry(eventLogs);
+    telemetry = report;
+    for (const w of report.recommendedDrillWords) {
+      missedWords.add(w);
+    }
+
     const limit = settings.mode === 'time' ? settings.time : settings.mode === 'words' ? settings.words : 0;
     const res: TestResult = {
       id: `${Date.now()}-${Math.random().toString(36).slice(2, 7)}`,
@@ -214,6 +230,9 @@
       samples: [...samples],
       keys: { ...keyStats },
       missed: [...missedWords],
+      transpositions: report.transpositions.map((t) => t.pair),
+      deleteTriggers: report.deleteTriggers.map((d) => d.trigger),
+      slowestKeys: report.hesitationKeys.slice(0, 4).map((h) => ({ key: h.key, avgMs: h.avgMs })),
     };
 
     prevBest = bestFor(res);
@@ -231,14 +250,60 @@
     }
   }
 
-  function recordKey(char: string, ok: boolean) {
-    const k = char.toLowerCase() === ' ' ? 'space' : char.toLowerCase();
-    const cur = keyStats[k] ?? { n: 0, e: 0 };
+  function recordKey(expected: string, typed: string, ok: boolean, word: string, charIdx: number) {
+    const now = performance.now();
+    const dt = lastKeystrokeMs ? Math.max(1, now - lastKeystrokeMs) : 0;
+    lastKeystrokeMs = now;
+
+    eventLogs.push({
+      t: now - startTime,
+      dt,
+      expected,
+      typed,
+      ok,
+      word,
+      charIdx,
+    });
+
+    const targetKey = (expected || typed).toLowerCase() === ' ' ? 'space' : (expected || typed).toLowerCase();
+    const cur = keyStats[targetKey] ?? { n: 0, e: 0, ms: 0, del: 0 };
     cur.n++;
     if (!ok) cur.e++;
-    keyStats[k] = cur;
-    lastKeyPressed = char;
+    if (dt > 0 && dt < 2500) cur.ms = (cur.ms ?? 0) + Math.round(dt);
+    keyStats[targetKey] = cur;
+
+    lastKeyPressed = typed;
     lastKeyOk = ok;
+  }
+
+  function recordBackspace(word: string, charIdx: number) {
+    const now = performance.now();
+    const dt = lastKeystrokeMs ? Math.max(1, now - lastKeystrokeMs) : 0;
+    lastKeystrokeMs = now;
+
+    // Credit delete count to the most recent forward keystroke
+    for (let i = eventLogs.length - 1; i >= 0; i--) {
+      if (eventLogs[i].typed !== 'BACK') {
+        const causeKey =
+          (eventLogs[i].expected || eventLogs[i].typed).toLowerCase() === ' '
+            ? 'space'
+            : (eventLogs[i].expected || eventLogs[i].typed).toLowerCase();
+        if (keyStats[causeKey]) {
+          keyStats[causeKey].del = (keyStats[causeKey].del ?? 0) + 1;
+        }
+        break;
+      }
+    }
+
+    eventLogs.push({
+      t: now - startTime,
+      dt,
+      expected: 'BACK',
+      typed: 'BACK',
+      ok: true,
+      word,
+      charIdx,
+    });
   }
 
   function scrollLinesIfNeeded() {
@@ -284,18 +349,26 @@
     if (status === 'done') return;
     if (e.metaKey || e.ctrlKey || e.altKey) return;
 
+    // Ignore events when typing inside custom text / alias inputs
+    const tag = (e.target as HTMLElement | null)?.tagName;
+    if (tag === 'TEXTAREA' || (tag === 'INPUT' && e.target !== hiddenInputEl)) {
+      return;
+    }
+
     const cur = words[wi];
     if (!cur) return;
 
     if (e.key === 'Backspace') {
       e.preventDefault();
       if (cur.typed.length > 0) {
+        recordBackspace(cur.target, cur.typed.length - 1);
         cur.typed = cur.typed.slice(0, -1);
         keyClicksCount++;
         if (settings.sound) playClick(settings.soundPack, settings.volume, 'back');
       } else if (wi > 0 && words[wi - 1].typed !== words[wi - 1].target) {
         wi--;
         words[wi].done = false;
+        recordBackspace(words[wi].target, words[wi].typed.length);
         if (settings.sound) playClick(settings.soundPack, settings.volume, 'back');
         scrollLinesIfNeeded();
       }
@@ -317,7 +390,7 @@
       keyClicksCount++;
       if (ok) correctKeys++;
       else intervalErrors++;
-      recordKey(' ', ok);
+      recordKey(' ', ' ', ok, cur.target, cur.typed.length);
 
       if (settings.sound) {
         playClick(settings.soundPack, settings.volume, ok || !settings.errorSound ? 'space' : 'error');
@@ -344,7 +417,8 @@
       e.preventDefault();
       if (status === 'idle') startTimer();
 
-      const expected = cur.target[cur.typed.length];
+      const idx = cur.typed.length;
+      const expected = cur.target[idx] ?? '';
       const ok = expected === e.key;
 
       totalKeys++;
@@ -355,7 +429,7 @@
       } else {
         intervalErrors++;
       }
-      recordKey(e.key, ok);
+      recordKey(expected, e.key, ok, cur.target, idx);
 
       if (settings.sound) {
         playClick(settings.soundPack, settings.volume, ok || !settings.errorSound ? 'key' : 'error');
@@ -370,11 +444,7 @@
       }
 
       // Auto-finish on last character of last word in words mode
-      if (
-        settings.mode === 'words' &&
-        wi === words.length - 1 &&
-        cur.typed === cur.target
-      ) {
+      if (settings.mode === 'words' && wi === words.length - 1 && cur.typed === cur.target) {
         cur.done = true;
         finishTest();
       }
@@ -399,6 +469,30 @@
       settings.sublists = [...settings.sublists, n].sort((a, b) => a - b);
     }
     initTest();
+  }
+
+  function drillDiagnosticWords(wordList: string[]) {
+    const clean = wordList.filter(Boolean);
+    if (!clean.length) return;
+    const repeated: string[] = [];
+    for (let i = 0; i < 30; i++) {
+      repeated.push(clean[i % clean.length]);
+    }
+    settings.source = 'custom';
+    settings.customText = repeated.join(' ');
+    settings.mode = 'words';
+    settings.words = 25;
+    initTest();
+  }
+
+  function speakWord(w: string) {
+    if ('speechSynthesis' in window) {
+      window.speechSynthesis.cancel();
+      const u = new SpeechSynthesisUtterance(w);
+      u.lang = 'en-US';
+      u.rate = 0.92;
+      window.speechSynthesis.speak(u);
+    }
   }
 
   onMount(() => {
@@ -537,7 +631,9 @@
       </div>
       {#if settings.source === 'mixed'}
         <div class="drawer-row">
-          <label class="sub" for="awl-ratio">AWL Ratio: <b>{settings.awlRatio}%</b> AWL / {100 - settings.awlRatio}% common</label>
+          <label class="sub" for="awl-ratio"
+            >AWL Ratio: <b>{settings.awlRatio}%</b> AWL / {100 - settings.awlRatio}% common</label
+          >
           <input
             id="awl-ratio"
             type="range"
@@ -563,7 +659,13 @@
         placeholder="Paste or type custom text here..."
       ></textarea>
       <div class="drawer-actions">
-        <button class="btn primary" onclick={() => { showCustom = false; initTest(); }}>Apply & Restart</button>
+        <button
+          class="btn primary"
+          onclick={() => {
+            showCustom = false;
+            initTest();
+          }}>Apply & Restart</button
+        >
       </div>
     </div>
   {/if}
@@ -592,7 +694,7 @@
       </div>
 
       <div>
-        <h4>Key Click Sound</h4>
+        <h4>Key Click Sound (8 Profiles)</h4>
         <label class="toggle">
           <input type="checkbox" bind:checked={settings.sound} />
           <span>Audible key clicks</span>
@@ -602,15 +704,15 @@
           <span>Distinct error tone</span>
         </label>
         <div class="pack-row">
-          <span class="sub">Profile:</span>
-          {#each ['mechanical', 'soft', 'typewriter', 'pop'] as pack}
+          {#each SOUND_PACKS as pack}
             <button
               class="pill"
-              class:on={settings.soundPack === pack}
+              class:on={settings.soundPack === pack.id}
+              title={pack.desc}
               onclick={() => {
-                settings.soundPack = pack as SoundPack;
+                settings.soundPack = pack.id as SoundPack;
                 playClick(settings.soundPack, settings.volume, 'key');
-              }}>{pack}</button
+              }}>{pack.label}</button
             >
           {/each}
         </div>
@@ -621,7 +723,7 @@
       </div>
 
       <div>
-        <h4>Typing Rules</h4>
+        <h4>Typing Rules & Machine Tag</h4>
         <label class="toggle">
           <input type="checkbox" bind:checked={settings.stopOnError} />
           <span>Stop on error (must type correct key)</span>
@@ -630,6 +732,14 @@
           <input type="checkbox" bind:checked={settings.strictSpace} />
           <span>Strict space (must fix word before advancing)</span>
         </label>
+        <label class="toggle">
+          <input type="checkbox" bind:checked={settings.cloudSync} />
+          <span>Sync scores to shared leaderboard</span>
+        </label>
+        <div class="pack-row">
+          <span class="sub">Machine ID: <b>{settings.machineAlias}</b></span>
+          <button class="pill" onclick={rerollWatchAlias} title="Generate another watch-brand ID">↻ Re-roll</button>
+        </div>
       </div>
     </div>
   {/if}
@@ -673,6 +783,9 @@
     </div>
 
     <div class="quick-toggles">
+      <a class="chip alias-chip" href="#/stats" title="Your machine watch-brand alias on the shared leaderboard">
+        ⌚ {settings.machineAlias}
+      </a>
       <button
         class="chip"
         class:on={settings.showWpm}
@@ -784,8 +897,8 @@
               </b>
             </div>
             <div>
-              <span class="lbl">time</span>
-              <b>{lastResult.duration}s</b>
+              <span class="lbl">median key pace</span>
+              <b>{telemetry?.medianIkiMs ?? '—'}ms</b>
             </div>
           </div>
         </div>
@@ -808,6 +921,50 @@
           />
         </div>
       </div>
+
+      <!-- Timing, Sequencing, Transposition & Backspace Coach -->
+      {#if telemetry}
+        <div class="coach-card card">
+          <div class="coach-head">
+            <div>
+              <h3>Timing, Sequencing & Error Diagnostics Coach</h3>
+              <span class="sub">
+                Baseline cadence: <b>{telemetry.medianIkiMs}ms</b> median key interval (90th percentile:
+                <b>{telemetry.p90IkiMs}ms</b>)
+              </span>
+            </div>
+            {#if telemetry.recommendedDrillWords.length > 0}
+              <button class="btn primary" onclick={() => drillDiagnosticWords(telemetry!.recommendedDrillWords)}>
+                Drill My {telemetry.recommendedDrillWords.length} Problem Words →
+              </button>
+            {/if}
+          </div>
+
+          {#if telemetry.findings.length === 0}
+            <p class="good-clean">
+              Clean run! No key-order transpositions, backspace bursts, or major key-finding hesitations detected.
+            </p>
+          {:else}
+            <div class="findings-grid">
+              {#each telemetry.findings as f}
+                <div class="finding-box" class:high={f.severity === 'high'}>
+                  <div class="finding-title">
+                    <b>{f.title}</b>
+                    <span class="sev-pill {f.severity}">{f.severity}</span>
+                  </div>
+                  <p class="finding-sum">{f.summary}</p>
+                  <div class="finding-examples">
+                    {#each f.examples as ex}
+                      <span class="ex-chip">{ex}</span>
+                    {/each}
+                  </div>
+                  <p class="finding-tip"><b>Prevention:</b> {f.preventionTip}</p>
+                </div>
+              {/each}
+            </div>
+          {/if}
+        </div>
+      {/if}
 
       {#if testAwlWords.length > 0}
         <div class="awl-review card">
@@ -833,6 +990,7 @@
             <div class="awl-detail">
               <div class="awl-title">
                 <b>{hoveredAwl.w}</b>
+                <button class="pill" onclick={() => speakWord(hoveredAwl!.w)} title="Pronounce word">🔊 Speak</button>
                 <span class="badge">Sublist {hoveredAwl.s}</span>
                 {#if hoveredAwl.f.length}
                   <span class="family">Family: {hoveredAwl.f.join(', ')}</span>
@@ -847,7 +1005,7 @@
 
       <div class="res-actions">
         <button class="btn primary" onclick={initTest}>Next Test (Tab + Enter)</button>
-        <a class="btn" href="#/stats">View Scoreboard & Key Heatmap</a>
+        <a class="btn" href="#/stats">Shared Leaderboard & Key Latency Map</a>
       </div>
     </div>
   {/if}
@@ -1014,10 +1172,16 @@
     padding: 0.3rem 0.65rem;
     border-radius: 999px;
     font-size: 0.78rem;
+    text-decoration: none;
   }
   .chip.on {
     color: var(--text);
     border-color: var(--accent);
+  }
+  .alias-chip {
+    color: var(--accent);
+    border-color: var(--border);
+    font-family: var(--font-mono);
   }
   .typing-arena {
     position: relative;
@@ -1162,6 +1326,90 @@
     display: flex;
     align-items: center;
   }
+
+  /* Coach & Telemetry Styles */
+  .coach-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-bottom: 0.9rem;
+  }
+  .coach-head h3 {
+    margin: 0 0 0.2rem;
+    font-size: 1.05rem;
+  }
+  .good-clean {
+    margin: 0;
+    color: var(--good);
+    font-weight: 600;
+  }
+  .findings-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 0.9rem;
+  }
+  .finding-box {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--accent);
+    border-radius: 8px;
+    padding: 0.9rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+  }
+  .finding-box.high {
+    border-left-color: var(--bad);
+  }
+  .finding-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.92rem;
+  }
+  .sev-pill {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 0.1rem 0.45rem;
+    border-radius: 4px;
+    background: var(--bg-3);
+    color: var(--sub);
+  }
+  .sev-pill.high {
+    background: var(--bad);
+    color: var(--bg);
+  }
+  .finding-sum {
+    margin: 0;
+    font-size: 0.85rem;
+    color: var(--sub);
+    line-height: 1.45;
+  }
+  .finding-examples {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+  }
+  .ex-chip {
+    background: var(--bg-2);
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    padding: 0.2rem 0.5rem;
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    color: var(--text);
+  }
+  .finding-tip {
+    margin: 0;
+    font-size: 0.84rem;
+    color: var(--text);
+    line-height: 1.45;
+  }
+
   .awl-review h3 {
     margin: 0;
     font-size: 1rem;
@@ -1240,4 +1488,3 @@
     gap: 0.8rem;
   }
 </style>
-

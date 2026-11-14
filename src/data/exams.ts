@@ -523,5 +523,361 @@ In short, private capital can supplement public tax revenue, but only when publi
       ],
     },
   },
+  {
+    id: 'mock-2026-2',
+    title: 'Practice Test 2 — Proven ETS Archetypes',
+    subtitle:
+      'Modeled directly on classic ETS TOEFL iBT topics: Roman Marine Concrete, Pleistocene Megafauna Extinction, Behavioral Economics Framing, and Campus Registrar/Housing',
+    reading: {
+      durationSeconds: 18 * 60,
+      tasks: [
+        {
+          id: 'r2-cw-1',
+          kind: 'complete_words',
+          topic: 'Longevity of Ancient Roman Marine Concrete',
+          template:
+            'Modern Portland cement structures exposed to seawater typically begin to deteriorate within several decades as waves corrode their steel reinforcement. In stark contrast, ancient Roman harbor breakwaters have endu[red] relentless ocean pounding for two mill[ennia] while actually growing stronger. Mineralogical anal[yses] reveal that Roman builders comb[ined] volcanic ash from Pozzuoli with quick[lime] and rubble. When seawater perc[olates] through microscopic pores in this mortar, it diss[olves] volcanic glass and precipitates rare interlocking crystals of aluminous toberm[orite] that seal fractures before they can prop[agate] further, inspiring contem[porary] engineers to design self-healing marine concrete.',
+          explanation:
+            'Adapted from ETS material-science passages: endured, millennia, analyses, combined, quicklime, percolates, dissolves, tobermorite, propagate, contemporary.',
+        },
+        {
+          id: 'r2-cw-2',
+          kind: 'complete_words',
+          topic: 'Avian Magnetoreception During Nocturnal Migration',
+          template:
+            'Every autumn, millions of songbirds navigate thousands of kilometers across featureless night skies to reach overwintering grounds they have never previously visited. Experimental studies demo[nstrate] that these migrants possess an internal magnetic comp[ass] sensitive to the inclination angle of Earth’s geomagnetic field. Rather than detecting polarity directly, light-sensitive proteins called cryptochr[omes] within the bird’s retina form quantum-entangled radical pairs when illuminated by blue wavelengths. Subtle variations in the orient[ation] of the magnetic field alter the chemical equi[librium] of these molecules, potentially allowing birds to per[ceive] directional gradients as visual patterns super[imposed] upon their surroundings. In addition, magnetite crystals embedded in upper-beak nerve endings calibration[te] map intensity.',
+          explanation:
+            'Standard ETS ornithology vocabulary: demonstrate, compass, cryptochromes, orientation, equilibrium, perceive, superimposed, calibrate.',
+        },
+        {
+          id: 'r2-dl-1',
+          kind: 'daily_life',
+          docType: 'notice',
+          title: 'Office of the University Registrar — Late Course Drop & Pass/No-Pass Policy',
+          meta: 'Posted: October 19 · Academic Calendar Bulletin #11',
+          body: `Undergraduate students are reminded that Friday, October 30, at 4:30 PM is the final deadline to change the grading basis of an enrolled course to Pass/No-Pass (P/NP) or to withdraw from an individual class without a permanent "W" notation on the official transcript.
+
+• Standard Changes (Through October 30): May be submitted directly through the Student Enrollment Portal. However, courses required for your declared major or quantitative general-education core cannot be switched to P/NP.
+• Late Petitions (October 31 – November 20): Require a signed Academic Exception Form from both the course instructor and your Residential College Dean, along with documentation of extenuating medical or personal circumstances.
+• Financial Aid & Full-Time Status Warning: Dropping below 12 credit hours at any point in the semester may reduce merit scholarship disbursements and invalidate on-campus residence hall eligibility. Consult a Financial Aid counselor in Room 112 of Morrison Hall before finalizing a drop that brings your course load under 12 credits.`,
+          questions: [
+            {
+              id: 'r2-dl-1-q1',
+              prompt: 'Under what condition is a student prohibited from switching a course to Pass/No-Pass before October 30?',
+              options: [
+                'The student has not yet obtained a signature from the Residential College Dean.',
+                'The course fulfills a requirement for the student’s major.',
+                'The student is enrolled in more than 16 credit hours for the term.',
+                'The course is taught by a visiting faculty member.',
+              ],
+              answer: 1,
+              explanation:
+                'The first bullet states that courses required for a declared major or quantitative general-education core cannot be switched to P/NP.',
+              highlightQuote: 'courses required for your declared major or quantitative general-education core cannot be switched to P/NP.',
+            },
+            {
+              id: 'r2-dl-1-q2',
+              prompt: 'Why should some students visit Morrison Hall before dropping a course?',
+              options: [
+                'To pay the administrative processing fee for a late transcript change',
+                'To pick up a paper copy of the Academic Exception Form',
+                'To check whether dropping below 12 credits will affect their scholarship or housing',
+                'To request an extension on their midterm examinations',
+              ],
+              answer: 2,
+              explanation:
+                'The third bullet warns that dropping below 12 credit hours may reduce scholarships and invalidate residence hall eligibility, advising students to consult a counselor in Morrison Hall.',
+              highlightQuote: 'Dropping below 12 credit hours at any point in the semester may reduce merit scholarship disbursements and invalidate on-campus residence hall eligibility.',
+            },
+          ],
+        },
+        {
+          id: 'r2-ap-1',
+          kind: 'academic_passage',
+          title: 'Debating the Late Pleistocene Megafauna Extinctions',
+          discipline: 'Paleoecology & Archaeology',
+          paragraphs: [
+            'Between approximately 50,000 and 10,000 years ago, the Earth experienced a selective wave of extinctions that eliminated nearly two-thirds of all mammalian genera weighing more than 44 kilograms. Across North and South America, mammoths, giant ground sloths, glyptodonts, and saber-toothed cats vanished near the end of the last glacial cycle, while Australia lost its giant diprotodont marsupials tens of millennia earlier. Because small mammals, amphibians, and marine invertebrates suffered comparatively minor losses during this interval, paleoecologists have long debated whether rapid postglacial climate warming or the geographic expansion of Paleolithic human hunters served as the primary driver.',
+            'Geoscientists Paul Martin and his successors formulated the "blitzkrieg" or prehistoric overkill hypothesis, pointing out that the timing of megafaunal collapse on different landmasses correlates closely with the earliest archaeological evidence of human colonization rather than with a single global climatic event. According to this model, large herbivores that had evolved in isolation from hominins lacked behavioral wariness toward bipedal predators. Because megafauna have long gestation periods and low reproductive rates, even modest hunting pressure by small bands of Clovis spear-throwers could have pushed populations below replacement thresholds within a few centuries.',
+            'Critics of the overkill model counter that archaeological kill sites containing unmistakable butchered bones of extinct megafauna—other than mammoths and mastodons—are remarkably scarce in the Americas. Moreover, high-resolution pollen cores and ancient DNA extracted from permafrost sediments indicate that abrupt temperature oscillations during the Bølling-Allerød warming and Younger Dryas cold snap fundamentally reorganized high-latitude vegetation. Rapid replacement of nutrient-rich mammoth steppe grasslands by boggy tundra and dense coniferous forest would have fragmented herbivore habitats, suggesting that human hunting delivered the final blow only to populations already severely stressed by ecological upheaval.',
+          ],
+          questions: [
+            {
+              id: 'r2-ap-1-q1',
+              prompt: 'Why does the author mention "small mammals, amphibians, and marine invertebrates" in paragraph 1?',
+              options: [
+                'To argue that the Late Pleistocene extinction was caused by an asteroid impact',
+                'To highlight how unusually concentrated the extinction event was among large-bodied land animals',
+                'To explain what Paleolithic hunters ate after mammoths disappeared',
+                'To show that ocean temperatures changed more rapidly than continental temperatures',
+              ],
+              answer: 1,
+              explanation:
+                'Contrasting the heavy losses of large mammals (>44 kg) with the minor losses of smaller and marine creatures underscores the size-selective nature of the extinction.',
+              highlightQuote: 'Because small mammals, amphibians, and marine invertebrates suffered comparatively minor losses during this interval',
+            },
+            {
+              id: 'r2-ap-1-q2',
+              prompt: 'Which of the following best supports the prehistoric overkill hypothesis described in paragraph 2?',
+              options: [
+                'Megafauna extinctions occurred at different times on different continents, matching when humans first arrived in each region.',
+                'Australian marsupials survived much longer than North American mammoths.',
+                'Large herbivores reproduced rapidly whenever glacial ice sheets retreated.',
+                'Hundreds of giant ground sloth kill sites have been excavated across North America.',
+              ],
+              answer: 0,
+              explanation:
+                'Paragraph 2 notes that the timing of megafaunal collapse on different landmasses correlates closely with the earliest archaeological evidence of human colonization rather than a single global climate event.',
+              highlightQuote: 'the timing of megafaunal collapse on different landmasses correlates closely with the earliest archaeological evidence of human colonization',
+            },
+            {
+              id: 'r2-ap-1-q3',
+              prompt: 'According to paragraph 3, what do pollen cores and permafrost DNA suggest about the extinction of large herbivores?',
+              options: [
+                'Disease carried by migrating birds wiped out coniferous forests.',
+                'Sudden climate shifts transformed productive grasslands into less suitable tundra and forest habitats.',
+                'Mammoths adapted easily to boggy tundra until human hunters arrived.',
+                'Clovis hunters deliberately set fires to convert forests into steppe grasslands.',
+              ],
+              answer: 1,
+              explanation:
+                'Paragraph 3 explains that abrupt climate oscillations replaced nutrient-rich mammoth steppe grasslands with boggy tundra and dense coniferous forest, fragmenting herbivore habitats.',
+              highlightQuote: 'Rapid replacement of nutrient-rich mammoth steppe grasslands by boggy tundra and dense coniferous forest would have fragmented herbivore habitats',
+            },
+          ],
+        },
+      ],
+    },
+    listening: {
+      durationSeconds: 16 * 60,
+      items: [
+        {
+          id: 'l2-cr-1',
+          kind: 'choose_response',
+          title: 'Academic Advisor Office Hours',
+          speakerLabel: 'Student speaking to a department secretary',
+          audioSrc: 'audio/l1-cr-1.m4a',
+          transcript: 'Didn’t you say the reserve reading room closes early on Thursdays?',
+          questions: [
+            {
+              id: 'l2-cr-1-q1',
+              prompt: 'Choose the most appropriate response to the speaker.',
+              options: [
+                'Only during intersession weeks; during regular terms it stays open until midnight.',
+                'Yes, the reserve books are arranged alphabetically by author.',
+                'I think the printer on the second floor is out of toner.',
+                'No, I haven’t registered for Thursday’s lab section.',
+              ],
+              answer: 0,
+              explanation:
+                'Option A directly answers the yes/no confirmation question about Thursday closing hours.',
+            },
+          ],
+        },
+        {
+          id: 'l2-conv-1',
+          kind: 'conversation',
+          title: 'Urban Transit Fellowship Endorsement',
+          speakerLabel: 'Conversation between a student and a career advisor',
+          audioSrc: 'audio/l1-conv-1.m4a',
+          transcript: `Student: Hi, Mr. Alvarez. Do you have a minute? I'm applying for the summer urban-planning fellowship with the city transit department, and the portal asks for a faculty endorsement form.
+Advisor: Sure, come on in. That transit fellowship is a great program—two of our seniors worked on their bus-rapid-transit redesign last year. What's the trouble with the endorsement form?
+Student: Well, my academic advisor, Professor Lindqvist, is on research leave in Stockholm this semester, and her automated email reply says she has limited internet access until mid-March. The fellowship application closes on March first.
+Advisor: Ah, I see. For municipal fellowships, the endorser doesn't strictly have to be your assigned departmental advisor. Any full-time faculty member who has taught you in an upper-level seminar and can evaluate your quantitative analysis skills is eligible.
+Student: Really? That's a relief. I took Spatial Data Modeling with Dr. Okafor in the fall and got an A on my final corridor study.
+Advisor: Dr. Okafor would be ideal—the transit agency specifically looks for GIS mapping experience. Send him a copy of your graded corridor project along with the portal link today so he has plenty of context.`,
+          questions: [
+            {
+              id: 'l2-conv-1-q1',
+              prompt: 'What does the advisor suggest the student include when emailing Dr. Okafor?',
+              options: [
+                'A letter of permission from Professor Lindqvist',
+                'An official transcript from the registrar’s office',
+                'A copy of the student’s graded corridor project from the fall course',
+                'A brochure describing last year’s bus-rapid-transit redesign',
+              ],
+              answer: 2,
+              explanation:
+                'At the end of the conversation, the advisor tells the student to send Dr. Okafor a copy of the graded corridor project along with the portal link.',
+            },
+          ],
+        },
+        {
+          id: 'l2-talk-1',
+          kind: 'academic_talk',
+          title: 'Urban Economics Lecture: Induced Demand & Cordon Pricing',
+          speakerLabel: 'Professor in an Urban Economics lecture',
+          audioSrc: 'audio/l1-talk-1.m4a',
+          transcript: `When a metropolitan road network approaches capacity, each additional driver entering the central business district imposes a disproportionate delay on everyone else on the road. In economics, we call this a negative congestion externality: the individual commuter pays for their own fuel and time, but not for the aggregate time lost by thousands of other motorists. For decades, municipal governments tried to solve traffic bottlenecks by widening highways. Yet empirical studies consistently confirm what transportation planners call induced demand—expanding road capacity lowers the time cost of driving, which attracts commuters away from rail transit and encourages longer suburban trips until congestion returns to its previous equilibrium.
+
+To address this, several global cities—including Stockholm, Singapore, and London—have implemented cordon congestion pricing. Under a variable cordon system, electronic gantries charge vehicles a fee to cross into the city center, with higher rates during peak morning and evening rush hours. When Stockholm introduced its permanent congestion charge after a seven-month trial, traffic volume across the cordon dropped by roughly twenty percent, and peak travel times fell by nearly a third. Crucially, dedicating the toll revenue directly to expanding commuter bus frequency made the policy politically durable, because drivers who switched modes immediately experienced faster, more reliable public transit.`,
+          questions: [
+            {
+              id: 'l2-talk-1-q1',
+              prompt: 'What does the professor mean by a "negative congestion externality"?',
+              options: [
+                'Road tolls that unfairly burden low-income suburban residents',
+                'Exhaust pollution that damages historic buildings in the city center',
+                'The extra delay imposed on all other drivers when one more vehicle enters a crowded road',
+                'The loss of retail business when downtown parking spaces are removed',
+              ],
+              answer: 2,
+              explanation:
+                'The professor defines a negative congestion externality as each additional driver imposing a disproportionate delay on everyone else while paying only for their own fuel and time.',
+            },
+          ],
+        },
+      ],
+    },
+    writing: {
+      buildSentences: {
+        durationSeconds: 6 * 60,
+        items: [
+          {
+            id: 'w2-bs-1',
+            context: 'A paleoclimatologist is explaining how ice cores preserve atmospheric history.',
+            chunks: ['trapped within glacial ice', 'are microscopic air bubbles', 'that record ancient', 'carbon dioxide levels'],
+            answer: 'Trapped within glacial ice are microscopic air bubbles that record ancient carbon dioxide levels.',
+            explanation:
+              'Participle phrase inversion ("Trapped within glacial ice") is followed by the main verb ("are") and subject ("microscopic air bubbles").',
+          },
+          {
+            id: 'w2-bs-2',
+            context: 'An academic advisor is explaining prerequisites for an econometrics course.',
+            chunks: ['unless students have completed', 'introductory calculus,', 'they may not enroll', 'in advanced econometrics'],
+            answer: 'Unless students have completed introductory calculus, they may not enroll in advanced econometrics.',
+            explanation:
+              '"Unless" introduces the conditional clause, followed by the main clause "they may not enroll in advanced econometrics".',
+          },
+          {
+            id: 'w2-bs-3',
+            context: 'An art historian is discussing the restoration of an oil painting.',
+            chunks: ['seldom have conservators', 'encountered a fresco', 'whose pigments remained', 'so remarkably vibrant'],
+            answer: 'Seldom have conservators encountered a fresco whose pigments remained so remarkably vibrant.',
+            explanation:
+              'Negative adverb "Seldom" at the start of a sentence triggers auxiliary-subject inversion ("have conservators encountered").',
+          },
+        ],
+      },
+      email: {
+        id: 'w2-email-1',
+        scenario:
+          'You recently completed a summer research internship in the Marine Biology Laboratory, and you are applying for a national undergraduate research conference. Write an email to your internship supervisor, Dr. Henrik Lindholm, asking for permission to present your summer data and requesting feedback on your abstract.',
+        recipient: 'Dr. Henrik Lindholm <h.lindholm@marine.oakridge.edu>',
+        subject: 'Request to Present Summer Coral Bleaching Data at Undergraduate Conference',
+        goals: [
+          'Remind Dr. Lindholm of the specific dataset you worked on during your summer internship.',
+          'Ask for official permission to present those findings as a poster at the upcoming November conference.',
+          'Ask whether he could review your 250-word abstract before the submission deadline next Wednesday.',
+        ],
+        recommendedMinutes: 7,
+        modelAnswer: `Dear Dr. Lindholm,
+
+I hope your fall semester is going well. I am writing to follow up on the thermal-tolerance assays I conducted on juvenile staghorn coral in your laboratory during the July–August summer fellowship.
+
+I would like to submit a poster presentation based on our dissolved-oxygen recovery measurements to the National Undergraduate Marine Science Symposium, which will take place in Seattle on November 14. Because the data were collected under your National Science Foundation grant, I wanted to request your formal permission to present these preliminary results and confirm that you and postdoc Dr. Elena Rostova are listed as co-authors.
+
+If you approve, would you have ten minutes before the abstract submission deadline next Wednesday, October 21, to look over my 250-word draft abstract attached below?
+
+Thank you very much for your mentorship and guidance.
+
+Best regards,
+Jordan Taylor`,
+        rubricNotes: [
+          'Clearly identifies the summer project, asks permission for the conference poster, and specifies the Wednesday abstract deadline.',
+          'Uses concise academic email conventions appropriate for addressing a faculty PI.',
+        ],
+      },
+      discussion: {
+        id: 'w2-disc-1',
+        course: 'Behavioral Economics & Consumer Policy',
+        professorPrompt:
+          'Many national governments are debating whether to impose an excise tax on sugar-sweetened beverages or instead mandate prominent front-of-package warning labels to reduce obesity and metabolic disease. Which policy intervention do you think is more effective and equitable, and why?',
+        studentA: {
+          name: 'Marcus',
+          text: 'Excise taxes work fastest because consumers respond immediately to price signals at the checkout counter. In cities that taxed sugary sodas by two cents per ounce, retail purchases dropped within months, and the tax revenue funded clean drinking fountains in public schools.',
+        },
+        studentB: {
+          name: 'Elena',
+          text: 'Consumption taxes are regressive—they penalize lower-income families without addressing the root problem, which is deceptive nutrition marketing. Clear octagonal warning labels on the front of bottles empower shoppers to make informed choices and push beverage companies to reformulate their recipes with less sugar.',
+        },
+        recommendedMinutes: 10,
+        modelAnswer: `Both Marcus and Elena highlight important mechanisms in behavioral economics, yet empirical evidence suggests that mandatory front-of-package warning labels combined with a tiered manufacturer sugar levy—rather than a flat retail sales tax on consumers—achieves the strongest public health outcome without burdening low-income households.
+
+As Elena points out, consumers frequently underestimate the hidden sucrose content in sports drinks and flavored teas due to complex nutrition tables. When Chile introduced bold black octagonal warning stop-signs on high-sugar products and prohibited those items from school cafeterias, purchases of heavily sweetened beverages fell by nearly twenty-five percent. Moreover, pairing labels with a supply-side levy structured like the United Kingdom’s Soft Drinks Industry Levy—which taxes beverage manufacturers only if their formula exceeds five grams of sugar per hundred milliliters—prompts producers to reformulate recipes before products ever reach supermarket shelves.
+
+Consequently, targeting manufacturer formulation and visual salience corrects information asymmetry while avoiding a regressive tax at the checkout register.`,
+        rubricNotes: [
+          'Directly compares price-based and information-based interventions while synthesizing both students’ points.',
+          'Introduces concrete policy mechanics (supply-side reformulation threshold, visual salience).',
+        ],
+      },
+    },
+    speaking: {
+      listenRepeat: [
+        {
+          id: 's2-lr-1',
+          text: 'Please leave your laboratory notebooks on the front bench before exiting.',
+          audioSrc: 'audio/s1-lr-1.m4a',
+        },
+        {
+          id: 's2-lr-2',
+          text: 'The archaeology department will host a guest lecture on radiocarbon dating this Thursday.',
+          audioSrc: 'audio/s1-lr-2.m4a',
+        },
+        {
+          id: 's2-lr-3',
+          text: 'Although initial survey results appeared promising, the sample size was too small to draw definitive conclusions.',
+          audioSrc: 'audio/s1-lr-3.m4a',
+        },
+        {
+          id: 's2-lr-4',
+          text: 'Students who wish to audit an advanced seminar must obtain written permission from both the instructor and the academic dean.',
+          audioSrc: 'audio/s1-lr-4.m4a',
+        },
+        {
+          id: 's2-lr-5',
+          text: 'By integrating satellite thermal imagery with ground-level moisture sensors, hydrologists can forecast regional drought severity weeks in advance.',
+          audioSrc: 'audio/s1-lr-5.m4a',
+        },
+      ],
+      interviewTopic: 'Academic Research, Internships, and Career Preparation',
+      interviewTurns: [
+        {
+          id: 's2-int-1',
+          interviewerQuestion:
+            'Thank you for speaking with me today. To start off, when you are preparing for a major exam or working on a complex assignment, what kind of environment helps you concentrate best, and why?',
+          audioSrc: 'audio/s1-int-1.m4a',
+          prepSeconds: 0,
+          responseSeconds: 45,
+          samplePoints: [
+            'Name a specific study setting and explain how its sensory or social characteristics help you stay focused.',
+          ],
+        },
+        {
+          id: 's2-int-2',
+          interviewerQuestion:
+            'Many university courses require collaborative group projects rather than individual papers. In your experience, what is the biggest advantage or challenge of working in a student team?',
+          audioSrc: 'audio/s1-int-2.m4a',
+          prepSeconds: 0,
+          responseSeconds: 45,
+          samplePoints: [
+            'Discuss either division of labor / peer review advantages or scheduling / accountability challenges with an example.',
+          ],
+        },
+        {
+          id: 's2-int-3',
+          interviewerQuestion:
+            'Looking more broadly at higher education, some professors ban laptops and tablets during lectures, arguing that handwritten notes improve retention. Do you think universities should restrict digital devices in lecture halls?',
+          audioSrc: 'audio/s1-int-3.m4a',
+          prepSeconds: 0,
+          responseSeconds: 45,
+          samplePoints: [
+            'Evaluate cognitive retention vs. digital accessibility and propose a practical classroom norm.',
+          ],
+        },
+      ],
+    },
+  },
 ];
 

@@ -1,5 +1,5 @@
 <script lang="ts">
-  // QWERTY keyboard: live key highlighting, or an error/speed heatmap.
+  // QWERTY keyboard: live key highlighting, error-rate heatmap, or latency/hesitation heatmap.
   import type { KeyStat } from '../lib/storage';
 
   interface Props {
@@ -7,9 +7,17 @@
     pressedOk?: boolean;
     next?: string | null; // live: the key to press next
     heat?: Record<string, KeyStat> | null;
+    heatMode?: 'error' | 'latency' | 'deletes';
     compact?: boolean;
   }
-  let { pressed = null, pressedOk = true, next = null, heat = null, compact = false }: Props = $props();
+  let {
+    pressed = null,
+    pressedOk = true,
+    next = null,
+    heat = null,
+    heatMode = 'error',
+    compact = false,
+  }: Props = $props();
 
   const rows = [
     ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', '[', ']'],
@@ -27,24 +35,37 @@
   const p = $derived(norm(pressed));
   const nx = $derived(norm(next));
 
-  function errRate(k: string) {
+  function metricRatio(k: string): number | null {
     const s = heat?.[k];
     if (!s || s.n < 3) return null;
-    return s.e / s.n;
+    if (heatMode === 'latency') {
+      if (!s.ms) return null;
+      const avgMs = s.ms / s.n;
+      // 110ms -> 0 (fast/green), 280ms+ -> 1 (slow/red)
+      return Math.max(0, Math.min(1, (avgMs - 110) / 170));
+    }
+    if (heatMode === 'deletes') {
+      const delRate = (s.del ?? 0) / s.n;
+      return Math.min(1, delRate / 0.12);
+    }
+    return Math.min(1, s.e / s.n / 0.15);
   }
+
   function heatStyle(k: string) {
     if (!heat) return '';
-    const r = errRate(k);
-    if (r === null) return '';
-    // 0% -> good, >=15% -> bad
-    const t = Math.min(1, r / 0.15);
+    const t = metricRatio(k);
+    if (t === null) return '';
     const mix = Math.round(t * 100);
     return `background: color-mix(in srgb, var(--bad) ${mix}%, var(--good) ${100 - mix}%); color: var(--bg); border-color: transparent;`;
   }
+
   function title(k: string) {
     const s = heat?.[k];
     if (!s) return k;
-    return `${k}: ${s.n} presses, ${s.e} errors (${((s.e / Math.max(1, s.n)) * 100).toFixed(1)}%)`;
+    const errPct = ((s.e / Math.max(1, s.n)) * 100).toFixed(1);
+    const avgMs = s.ms ? `${Math.round(s.ms / s.n)}ms avg find time` : '';
+    const dels = s.del ? ` · ${s.del} delete triggers` : '';
+    return `${k.toUpperCase()}: ${s.n} presses, ${s.e} errors (${errPct}%)${avgMs ? ' · ' + avgMs : ''}${dels}`;
   }
 </script>
 
@@ -127,4 +148,3 @@
     width: 15em;
   }
 </style>
-
