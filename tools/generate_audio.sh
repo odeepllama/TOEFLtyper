@@ -79,3 +79,4 @@ gen_single "s1-int-2" "Tom (Enhanced)" 176 "Many university courses require coll
 gen_single "s1-int-3" "Tom (Enhanced)" 176 "Looking more broadly at higher education, some professors ban laptops and tablets during lectures, arguing that handwritten notes improve retention. Do you think universities should restrict digital devices in lecture halls?"
 
 ls -lh "$OUT"
+
