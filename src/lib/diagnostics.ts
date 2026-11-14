@@ -270,3 +270,4 @@ export function analyzeKeystrokeTelemetry(events: KeyEventLog[]): TelemetryRepor
     recommendedDrillWords: [...drillSet].filter((w) => w.length >= 3),
   };
 }
+
