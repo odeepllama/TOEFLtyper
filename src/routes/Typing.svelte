@@ -209,9 +209,6 @@
     // Run sequencing, timing, transposition, and delete-trigger telemetry analysis
     const report = analyzeKeystrokeTelemetry(eventLogs);
     telemetry = report;
-    for (const w of report.recommendedDrillWords) {
-      missedWords.add(w);
-    }
 
     const limit = settings.mode === 'time' ? settings.time : settings.mode === 'words' ? settings.words : 0;
     const res: TestResult = {
@@ -240,9 +237,10 @@
     saveResult(res);
     lastResult = res;
 
-    // Default inspect first missed AWL word or any AWL word in the test
-    for (const mw of missedWords) {
-      const entry = lookupAwl(mw);
+    // Default inspect first missed AWL word or the first AWL word in the test
+    for (let i = 0; i < upto; i++) {
+      const clean = words[i].target.toLowerCase().replace(/[^a-z-]/g, '');
+      const entry = lookupAwl(clean);
       if (entry) {
         hoveredAwl = entry;
         break;
@@ -502,17 +500,20 @@
   // Collect AWL words present in the test for vocabulary review
   const testAwlWords = $derived.by(() => {
     if (status !== 'done') return [];
-    const seen = new Map<string, { entry: AwlEntry; missed: boolean }>();
-    const missedSet = new Set(lastResult?.missed ?? []);
+    const seen = new Map<string, { entry: AwlEntry; missed: boolean; typedOk: boolean }>();
     const upto = Math.min(wi + 1, words.length);
     for (let i = 0; i < upto; i++) {
-      const clean = words[i].target.toLowerCase().replace(/[^a-z-]/g, '');
+      const w = words[i];
+      if (!w.done && w.typed.length === 0) continue;
+      const clean = w.target.toLowerCase().replace(/[^a-z-]/g, '');
       const entry = lookupAwl(clean);
       if (entry && !seen.has(entry.w)) {
-        seen.set(entry.w, { entry, missed: missedSet.has(clean) || missedSet.has(entry.w) });
+        const isPerfect = w.done && w.typed === w.target;
+        const isMistyped = w.done && w.typed !== w.target;
+        seen.set(entry.w, { entry, missed: isMistyped, typedOk: isPerfect });
       }
     }
-    return [...seen.values()].sort((a, b) => Number(b.missed) - Number(a.missed));
+    return [...seen.values()];
   });
 </script>
 
@@ -981,6 +982,7 @@
             {#each testAwlWords as item}
               <button
                 class="awl-chip"
+                class:typed-ok={item.typedOk}
                 class:missed={item.missed}
                 class:selected={hoveredAwl?.w === item.entry.w}
                 onmouseenter={() => (hoveredAwl = item.entry)}
@@ -1454,10 +1456,15 @@
     padding: 0.3rem 0.6rem;
     font-family: var(--font-mono);
     font-size: 0.85rem;
+    color: var(--text);
   }
   .awl-chip small {
     color: var(--muted);
     margin-left: 0.25rem;
+  }
+  .awl-chip.typed-ok {
+    border-color: color-mix(in srgb, var(--accent-2) 55%, var(--border));
+    color: var(--accent-2);
   }
   .awl-chip.missed {
     border-color: var(--bad);
@@ -1466,6 +1473,7 @@
   .awl-chip.selected {
     border-color: var(--accent);
     background: var(--bg);
+    color: var(--accent);
   }
   .awl-detail {
     margin-top: 0.85rem;
