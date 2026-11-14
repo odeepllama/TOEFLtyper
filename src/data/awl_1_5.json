@@ -1,0 +1,3237 @@
+[
+ {
+  "w": "analyze",
+  "s": 1,
+  "d": "to examine something carefully in detail",
+  "e": "Researchers analyzed the survey results to identify patterns in student behavior.",
+  "f": [
+   "analyse",
+   "analysis",
+   "analytical",
+   "analyst"
+  ]
+ },
+ {
+  "w": "approach",
+  "s": 1,
+  "d": "a way of dealing with a problem or situation",
+  "e": "The study adopts a qualitative approach to understanding urban migration.",
+  "f": [
+   "approaches",
+   "approached",
+   "approachable"
+  ]
+ },
+ {
+  "w": "area",
+  "s": 1,
+  "d": "a particular subject, field, or region",
+  "e": "Climate science is an area of research that has grown rapidly.",
+  "f": [
+   "areas"
+  ]
+ },
+ {
+  "w": "assess",
+  "s": 1,
+  "d": "to judge the quality, value, or importance of something",
+  "e": "Teachers assess student progress through regular written assignments.",
+  "f": [
+   "assessment",
+   "assessed",
+   "assessable",
+   "reassess"
+  ]
+ },
+ {
+  "w": "assume",
+  "s": 1,
+  "d": "to accept something as true without proof",
+  "e": "Many economic models assume that consumers behave rationally.",
+  "f": [
+   "assumption",
+   "assumed",
+   "assuming"
+  ]
+ },
+ {
+  "w": "authority",
+  "s": 1,
+  "d": "the power or right to control or decide",
+  "e": "Local governments have the authority to set their own tax rates.",
+  "f": [
+   "authorities",
+   "authorize",
+   "authoritative"
+  ]
+ },
+ {
+  "w": "available",
+  "s": 1,
+  "d": "able to be used or obtained",
+  "e": "Detailed records from that period are not available to the public.",
+  "f": [
+   "availability",
+   "unavailable"
+  ]
+ },
+ {
+  "w": "benefit",
+  "s": 1,
+  "d": "an advantage or helpful result",
+  "e": "Regular exercise provides significant health benefits for older adults.",
+  "f": [
+   "benefits",
+   "beneficial",
+   "beneficiary",
+   "benefited"
+  ]
+ },
+ {
+  "w": "concept",
+  "s": 1,
+  "d": "an abstract idea or general notion",
+  "e": "The concept of democracy has changed considerably over time.",
+  "f": [
+   "concepts",
+   "conceptual",
+   "conceptualize",
+   "conception"
+  ]
+ },
+ {
+  "w": "consist",
+  "s": 1,
+  "d": "to be made up of parts or things",
+  "e": "The committee consists of twelve members from different departments.",
+  "f": [
+   "consists",
+   "consistent",
+   "consistency",
+   "inconsistent"
+  ]
+ },
+ {
+  "w": "constitute",
+  "s": 1,
+  "d": "to form or make up something",
+  "e": "Women constitute nearly half of the workforce in this sector.",
+  "f": [
+   "constitution",
+   "constitutional",
+   "constituent",
+   "constitutes"
+  ]
+ },
+ {
+  "w": "context",
+  "s": 1,
+  "d": "the situation or background in which something happens",
+  "e": "The poem must be read in its historical context to be understood.",
+  "f": [
+   "contexts",
+   "contextual",
+   "contextualize"
+  ]
+ },
+ {
+  "w": "contract",
+  "s": 1,
+  "d": "a formal legal agreement between parties",
+  "e": "The company signed a three-year contract with its main supplier.",
+  "f": [
+   "contracts",
+   "contractor",
+   "contractual",
+   "contracted"
+  ]
+ },
+ {
+  "w": "create",
+  "s": 1,
+  "d": "to make or produce something new",
+  "e": "The new policy aims to create jobs in rural communities.",
+  "f": [
+   "creation",
+   "creative",
+   "creativity",
+   "creator"
+  ]
+ },
+ {
+  "w": "data",
+  "s": 1,
+  "d": "facts or information collected for analysis",
+  "e": "The data suggest a strong link between diet and heart disease.",
+  "f": [
+   "dataset"
+  ]
+ },
+ {
+  "w": "define",
+  "s": 1,
+  "d": "to state the exact meaning or limits of something",
+  "e": "Scholars define poverty in a number of different ways.",
+  "f": [
+   "definition",
+   "definable",
+   "defined",
+   "redefine"
+  ]
+ },
+ {
+  "w": "derive",
+  "s": 1,
+  "d": "to get or develop something from a source",
+  "e": "Many English words are derived from Latin and Greek.",
+  "f": [
+   "derivation",
+   "derivative",
+   "derived"
+  ]
+ },
+ {
+  "w": "distribute",
+  "s": 1,
+  "d": "to give out or spread across an area or group",
+  "e": "Food aid was distributed to families affected by the flood.",
+  "f": [
+   "distribution",
+   "distributor",
+   "distributed",
+   "redistribute"
+  ]
+ },
+ {
+  "w": "economy",
+  "s": 1,
+  "d": "the system of trade, industry, and money in a place",
+  "e": "The national economy grew steadily during the past decade.",
+  "f": [
+   "economic",
+   "economics",
+   "economist",
+   "economical"
+  ]
+ },
+ {
+  "w": "environment",
+  "s": 1,
+  "d": "the natural world or surrounding conditions",
+  "e": "Industrial pollution has caused lasting damage to the environment.",
+  "f": [
+   "environmental",
+   "environmentalist",
+   "environmentally"
+  ]
+ },
+ {
+  "w": "establish",
+  "s": 1,
+  "d": "to set up or prove something firmly",
+  "e": "The university was established in the early nineteenth century.",
+  "f": [
+   "established",
+   "establishment",
+   "establishing"
+  ]
+ },
+ {
+  "w": "estimate",
+  "s": 1,
+  "d": "to roughly calculate a value or amount",
+  "e": "Experts estimate that the population will double within fifty years.",
+  "f": [
+   "estimated",
+   "estimation",
+   "overestimate",
+   "underestimate"
+  ]
+ },
+ {
+  "w": "evident",
+  "s": 1,
+  "d": "clear and easy to see or understand",
+  "e": "It was evident from the results that the treatment was effective.",
+  "f": [
+   "evidence",
+   "evidently",
+   "evidential"
+  ]
+ },
+ {
+  "w": "export",
+  "s": 1,
+  "d": "to sell goods to another country",
+  "e": "Brazil exports large quantities of coffee and soybeans each year.",
+  "f": [
+   "exports",
+   "exporter",
+   "exported"
+  ]
+ },
+ {
+  "w": "factor",
+  "s": 1,
+  "d": "one of several things that cause a result",
+  "e": "Income is an important factor in determining access to education.",
+  "f": [
+   "factors",
+   "factored"
+  ]
+ },
+ {
+  "w": "finance",
+  "s": 1,
+  "d": "the management of money, or money for a purpose",
+  "e": "The project was financed by a combination of public and private funds.",
+  "f": [
+   "financial",
+   "financially",
+   "financier",
+   "financed"
+  ]
+ },
+ {
+  "w": "formula",
+  "s": 1,
+  "d": "a rule or method written with symbols",
+  "e": "Students used a simple formula to calculate the area of each shape.",
+  "f": [
+   "formulas",
+   "formulae",
+   "formulate",
+   "formulation"
+  ]
+ },
+ {
+  "w": "function",
+  "s": 1,
+  "d": "the purpose or role of something",
+  "e": "The main function of the kidneys is to filter waste from the blood.",
+  "f": [
+   "functional",
+   "functioning",
+   "functioned",
+   "dysfunctional"
+  ]
+ },
+ {
+  "w": "identify",
+  "s": 1,
+  "d": "to recognize or name something",
+  "e": "Researchers identified three key causes of the decline.",
+  "f": [
+   "identification",
+   "identifiable",
+   "identity",
+   "identified"
+  ]
+ },
+ {
+  "w": "income",
+  "s": 1,
+  "d": "money received from work or investments",
+  "e": "Households with lower incomes spend more on basic necessities.",
+  "f": [
+   "incomes"
+  ]
+ },
+ {
+  "w": "indicate",
+  "s": 1,
+  "d": "to show or point to something",
+  "e": "Recent studies indicate that sleep improves long-term memory.",
+  "f": [
+   "indication",
+   "indicator",
+   "indicative",
+   "indicated"
+  ]
+ },
+ {
+  "w": "individual",
+  "s": 1,
+  "d": "a single person or thing, separate from a group",
+  "e": "Each individual responds differently to stressful situations.",
+  "f": [
+   "individuals",
+   "individually",
+   "individualism",
+   "individuality"
+  ]
+ },
+ {
+  "w": "interpret",
+  "s": 1,
+  "d": "to explain the meaning of something",
+  "e": "Historians interpret the same events in very different ways.",
+  "f": [
+   "interpretation",
+   "interpreter",
+   "interpretive",
+   "misinterpret"
+  ]
+ },
+ {
+  "w": "involve",
+  "s": 1,
+  "d": "to include something as a necessary part",
+  "e": "The experiment involved measuring plant growth over six weeks.",
+  "f": [
+   "involvement",
+   "involved",
+   "involving",
+   "uninvolved"
+  ]
+ },
+ {
+  "w": "issue",
+  "s": 1,
+  "d": "an important topic or problem for discussion",
+  "e": "Water scarcity is a major issue in many developing regions.",
+  "f": [
+   "issues",
+   "issued"
+  ]
+ },
+ {
+  "w": "labor",
+  "s": 1,
+  "d": "work, especially physical work, or workers as a group",
+  "e": "The factory relied heavily on cheap labor to keep costs low.",
+  "f": [
+   "labour",
+   "laborer",
+   "labored"
+  ]
+ },
+ {
+  "w": "legal",
+  "s": 1,
+  "d": "related to or allowed by law",
+  "e": "The company faced legal action for violating safety regulations.",
+  "f": [
+   "legally",
+   "legality",
+   "illegal",
+   "illegally"
+  ]
+ },
+ {
+  "w": "legislate",
+  "s": 1,
+  "d": "to make laws",
+  "e": "Governments often struggle to legislate on rapidly changing technology.",
+  "f": [
+   "legislation",
+   "legislative",
+   "legislator",
+   "legislature"
+  ]
+ },
+ {
+  "w": "major",
+  "s": 1,
+  "d": "very important, serious, or large",
+  "e": "Deforestation is a major cause of habitat loss worldwide.",
+  "f": [
+   "majority",
+   "majors"
+  ]
+ },
+ {
+  "w": "method",
+  "s": 1,
+  "d": "a particular way of doing something",
+  "e": "The researchers tested a new method for purifying drinking water.",
+  "f": [
+   "methods",
+   "methodology",
+   "methodical",
+   "methodological"
+  ]
+ },
+ {
+  "w": "occur",
+  "s": 1,
+  "d": "to happen or take place",
+  "e": "Earthquakes occur most frequently along the edges of tectonic plates.",
+  "f": [
+   "occurrence",
+   "occurred",
+   "occurring",
+   "recur"
+  ]
+ },
+ {
+  "w": "percent",
+  "s": 1,
+  "d": "one part in every hundred",
+  "e": "Nearly forty percent of the respondents reported feeling stressed at work.",
+  "f": [
+   "percentage",
+   "per cent"
+  ]
+ },
+ {
+  "w": "period",
+  "s": 1,
+  "d": "a length of time",
+  "e": "The city expanded rapidly during the period of industrialization.",
+  "f": [
+   "periods",
+   "periodic",
+   "periodical",
+   "periodically"
+  ]
+ },
+ {
+  "w": "policy",
+  "s": 1,
+  "d": "a plan of action adopted by a government or organization",
+  "e": "The new policy requires all students to complete a research project.",
+  "f": [
+   "policies"
+  ]
+ },
+ {
+  "w": "principle",
+  "s": 1,
+  "d": "a basic truth, rule, or belief",
+  "e": "The constitution is based on the principle of equality before the law.",
+  "f": [
+   "principles",
+   "principled",
+   "unprincipled"
+  ]
+ },
+ {
+  "w": "proceed",
+  "s": 1,
+  "d": "to continue or move forward",
+  "e": "After the vote, the committee proceeded to the next item on the agenda.",
+  "f": [
+   "procedure",
+   "procedural",
+   "proceedings",
+   "proceeds"
+  ]
+ },
+ {
+  "w": "process",
+  "s": 1,
+  "d": "a series of actions that produce a result",
+  "e": "Photosynthesis is the process by which plants convert light into energy.",
+  "f": [
+   "processes",
+   "processed",
+   "processing",
+   "processor"
+  ]
+ },
+ {
+  "w": "require",
+  "s": 1,
+  "d": "to need something or make it necessary",
+  "e": "Most graduate programs require applicants to submit a writing sample.",
+  "f": [
+   "requirement",
+   "required",
+   "requiring"
+  ]
+ },
+ {
+  "w": "research",
+  "s": 1,
+  "d": "careful study to discover new facts",
+  "e": "Recent research has challenged earlier views on language learning.",
+  "f": [
+   "researcher",
+   "researched",
+   "researching"
+  ]
+ },
+ {
+  "w": "respond",
+  "s": 1,
+  "d": "to reply or react to something",
+  "e": "Patients responded well to the new treatment.",
+  "f": [
+   "response",
+   "respondent",
+   "responsive",
+   "responsiveness"
+  ]
+ },
+ {
+  "w": "role",
+  "s": 1,
+  "d": "the function or position of someone or something",
+  "e": "Social media plays an important role in modern political campaigns.",
+  "f": [
+   "roles"
+  ]
+ },
+ {
+  "w": "section",
+  "s": 1,
+  "d": "one of the parts something is divided into",
+  "e": "The final section of the report outlines several recommendations.",
+  "f": [
+   "sections",
+   "sectional",
+   "sectioned"
+  ]
+ },
+ {
+  "w": "sector",
+  "s": 1,
+  "d": "a part of an economy or society",
+  "e": "The service sector now employs most workers in the country.",
+  "f": [
+   "sectors"
+  ]
+ },
+ {
+  "w": "significant",
+  "s": 1,
+  "d": "large or important enough to be noticed",
+  "e": "There was a significant increase in sales after the campaign.",
+  "f": [
+   "significance",
+   "significantly",
+   "insignificant",
+   "signify"
+  ]
+ },
+ {
+  "w": "similar",
+  "s": 1,
+  "d": "almost the same but not identical",
+  "e": "The two species have similar diets but live in different habitats.",
+  "f": [
+   "similarity",
+   "similarly",
+   "dissimilar"
+  ]
+ },
+ {
+  "w": "source",
+  "s": 1,
+  "d": "a place or thing from which something comes",
+  "e": "Solar power is an increasingly important source of energy.",
+  "f": [
+   "sources",
+   "sourced"
+  ]
+ },
+ {
+  "w": "specific",
+  "s": 1,
+  "d": "clearly defined or particular",
+  "e": "The grant must be used for a specific purpose.",
+  "f": [
+   "specifically",
+   "specification",
+   "specificity"
+  ]
+ },
+ {
+  "w": "structure",
+  "s": 1,
+  "d": "the way parts are arranged or organized",
+  "e": "The structure of the essay should be clear and logical.",
+  "f": [
+   "structural",
+   "structured",
+   "restructure",
+   "structurally"
+  ]
+ },
+ {
+  "w": "theory",
+  "s": 1,
+  "d": "a set of ideas that explains something",
+  "e": "Darwin's theory of evolution transformed the study of biology.",
+  "f": [
+   "theories",
+   "theoretical",
+   "theorist",
+   "theorize"
+  ]
+ },
+ {
+  "w": "vary",
+  "s": 1,
+  "d": "to be different or change",
+  "e": "Average temperatures vary widely across the region.",
+  "f": [
+   "variable",
+   "variation",
+   "variety",
+   "various",
+   "varied"
+  ]
+ },
+ {
+  "w": "achieve",
+  "s": 2,
+  "d": "to succeed in reaching a goal",
+  "e": "Few countries have achieved full employment in recent decades.",
+  "f": [
+   "achievement",
+   "achievable",
+   "achieved",
+   "achiever"
+  ]
+ },
+ {
+  "w": "acquire",
+  "s": 2,
+  "d": "to gain or obtain something",
+  "e": "Children acquire language naturally through daily interaction.",
+  "f": [
+   "acquisition",
+   "acquired",
+   "acquiring"
+  ]
+ },
+ {
+  "w": "administrate",
+  "s": 2,
+  "d": "to manage or organize the operation of something",
+  "e": "The program is administrated by a small team of specialists.",
+  "f": [
+   "administration",
+   "administrative",
+   "administrator",
+   "administer"
+  ]
+ },
+ {
+  "w": "affect",
+  "s": 2,
+  "d": "to have an influence on something",
+  "e": "Rising interest rates affect both businesses and consumers.",
+  "f": [
+   "affected",
+   "affecting",
+   "unaffected"
+  ]
+ },
+ {
+  "w": "appropriate",
+  "s": 2,
+  "d": "suitable for a particular situation",
+  "e": "Formal language is appropriate for academic writing.",
+  "f": [
+   "appropriately",
+   "inappropriate",
+   "appropriateness"
+  ]
+ },
+ {
+  "w": "aspect",
+  "s": 2,
+  "d": "one part or feature of a situation",
+  "e": "The report examines every aspect of the proposed policy.",
+  "f": [
+   "aspects"
+  ]
+ },
+ {
+  "w": "assist",
+  "s": 2,
+  "d": "to help someone do something",
+  "e": "Graduate students assist professors with research and teaching.",
+  "f": [
+   "assistance",
+   "assistant",
+   "assisted"
+  ]
+ },
+ {
+  "w": "category",
+  "s": 2,
+  "d": "a group of things with shared features",
+  "e": "The animals were sorted into categories based on their diet.",
+  "f": [
+   "categories",
+   "categorize",
+   "categorization"
+  ]
+ },
+ {
+  "w": "chapter",
+  "s": 2,
+  "d": "a main division of a book",
+  "e": "The first chapter introduces the main arguments of the book.",
+  "f": [
+   "chapters"
+  ]
+ },
+ {
+  "w": "commission",
+  "s": 2,
+  "d": "an official group given a special task",
+  "e": "A commission was formed to investigate the causes of the crisis.",
+  "f": [
+   "commissioned",
+   "commissioner",
+   "commissions"
+  ]
+ },
+ {
+  "w": "community",
+  "s": 2,
+  "d": "a group of people living in the same place or sharing interests",
+  "e": "The new library has become a center of the local community.",
+  "f": [
+   "communities"
+  ]
+ },
+ {
+  "w": "complex",
+  "s": 2,
+  "d": "made of many connected parts; difficult to understand",
+  "e": "The human brain is one of the most complex systems in nature.",
+  "f": [
+   "complexity",
+   "complexities"
+  ]
+ },
+ {
+  "w": "compute",
+  "s": 2,
+  "d": "to calculate a number or amount",
+  "e": "The software computes the average score for each group.",
+  "f": [
+   "computation",
+   "computational",
+   "computer",
+   "computing"
+  ]
+ },
+ {
+  "w": "conclude",
+  "s": 2,
+  "d": "to decide after thinking; to end",
+  "e": "The authors concluded that further research was necessary.",
+  "f": [
+   "conclusion",
+   "conclusive",
+   "inconclusive",
+   "concluding"
+  ]
+ },
+ {
+  "w": "conduct",
+  "s": 2,
+  "d": "to organize and carry out an activity",
+  "e": "Scientists conducted a series of experiments on plant growth.",
+  "f": [
+   "conducted",
+   "conducting",
+   "conductor"
+  ]
+ },
+ {
+  "w": "consequent",
+  "s": 2,
+  "d": "happening as a result of something",
+  "e": "The drought and the consequent food shortage affected millions.",
+  "f": [
+   "consequence",
+   "consequently",
+   "consequences"
+  ]
+ },
+ {
+  "w": "construct",
+  "s": 2,
+  "d": "to build or put together",
+  "e": "Engineers constructed the bridge using locally sourced materials.",
+  "f": [
+   "construction",
+   "constructive",
+   "reconstruct",
+   "constructed"
+  ]
+ },
+ {
+  "w": "consume",
+  "s": 2,
+  "d": "to use up or eat something",
+  "e": "Developed nations consume a large share of global energy.",
+  "f": [
+   "consumer",
+   "consumption",
+   "consumed",
+   "consuming"
+  ]
+ },
+ {
+  "w": "credit",
+  "s": 2,
+  "d": "praise or recognition; an arrangement to pay later",
+  "e": "Many students rely on credit to pay for their education.",
+  "f": [
+   "credits",
+   "credited",
+   "creditor"
+  ]
+ },
+ {
+  "w": "culture",
+  "s": 2,
+  "d": "the customs, beliefs, and arts of a group",
+  "e": "Food plays a central role in many cultures around the world.",
+  "f": [
+   "cultural",
+   "culturally",
+   "cultures"
+  ]
+ },
+ {
+  "w": "design",
+  "s": 2,
+  "d": "to plan how something will look or work",
+  "e": "The building was designed to use as little energy as possible.",
+  "f": [
+   "designer",
+   "designed",
+   "designing"
+  ]
+ },
+ {
+  "w": "distinct",
+  "s": 2,
+  "d": "clearly different or separate",
+  "e": "The island is home to several distinct species of birds.",
+  "f": [
+   "distinction",
+   "distinctive",
+   "distinctly",
+   "indistinct"
+  ]
+ },
+ {
+  "w": "element",
+  "s": 2,
+  "d": "a basic part of something",
+  "e": "Trust is an essential element of any successful partnership.",
+  "f": [
+   "elements",
+   "elemental"
+  ]
+ },
+ {
+  "w": "equate",
+  "s": 2,
+  "d": "to consider two things as equal or the same",
+  "e": "Many people equate wealth with happiness.",
+  "f": [
+   "equation",
+   "equated",
+   "equating"
+  ]
+ },
+ {
+  "w": "evaluate",
+  "s": 2,
+  "d": "to judge the value or quality of something",
+  "e": "The committee will evaluate each proposal carefully.",
+  "f": [
+   "evaluation",
+   "evaluative",
+   "evaluated",
+   "reevaluate"
+  ]
+ },
+ {
+  "w": "feature",
+  "s": 2,
+  "d": "an important or typical part of something",
+  "e": "A key feature of the design is its flexibility.",
+  "f": [
+   "features",
+   "featured",
+   "featuring"
+  ]
+ },
+ {
+  "w": "final",
+  "s": 2,
+  "d": "last; coming at the end",
+  "e": "The final stage of the project involved testing the prototype.",
+  "f": [
+   "finally",
+   "finalize",
+   "finality"
+  ]
+ },
+ {
+  "w": "focus",
+  "s": 2,
+  "d": "to concentrate attention on something",
+  "e": "This study focuses on the effects of noise on concentration.",
+  "f": [
+   "focused",
+   "focuses",
+   "focusing",
+   "refocus"
+  ]
+ },
+ {
+  "w": "impact",
+  "s": 2,
+  "d": "a strong effect or influence",
+  "e": "The new law had a major impact on small businesses.",
+  "f": [
+   "impacts",
+   "impacted",
+   "impacting"
+  ]
+ },
+ {
+  "w": "injure",
+  "s": 2,
+  "d": "to physically harm someone",
+  "e": "Several workers were injured in the factory accident.",
+  "f": [
+   "injury",
+   "injured",
+   "injuries",
+   "uninjured"
+  ]
+ },
+ {
+  "w": "institute",
+  "s": 2,
+  "d": "an organization for a particular purpose",
+  "e": "The institute conducts research on renewable energy.",
+  "f": [
+   "institution",
+   "institutional",
+   "institutions",
+   "instituted"
+  ]
+ },
+ {
+  "w": "invest",
+  "s": 2,
+  "d": "to put money or effort into something for future benefit",
+  "e": "The government invested heavily in public transportation.",
+  "f": [
+   "investment",
+   "investor",
+   "invested",
+   "reinvest"
+  ]
+ },
+ {
+  "w": "item",
+  "s": 2,
+  "d": "a single thing on a list or in a group",
+  "e": "Each item on the questionnaire was carefully reviewed.",
+  "f": [
+   "items",
+   "itemize"
+  ]
+ },
+ {
+  "w": "journal",
+  "s": 2,
+  "d": "a serious magazine about a subject; a diary",
+  "e": "Her findings were published in a respected scientific journal.",
+  "f": [
+   "journals"
+  ]
+ },
+ {
+  "w": "maintain",
+  "s": 2,
+  "d": "to keep something in the same state",
+  "e": "It is difficult to maintain motivation during a long project.",
+  "f": [
+   "maintenance",
+   "maintained",
+   "maintaining"
+  ]
+ },
+ {
+  "w": "normal",
+  "s": 2,
+  "d": "usual, ordinary, or expected",
+  "e": "Body temperature returned to normal after a few hours.",
+  "f": [
+   "normally",
+   "normality",
+   "abnormal",
+   "normalize"
+  ]
+ },
+ {
+  "w": "obtain",
+  "s": 2,
+  "d": "to get something, often with effort",
+  "e": "Researchers obtained permission before interviewing participants.",
+  "f": [
+   "obtained",
+   "obtainable",
+   "unobtainable"
+  ]
+ },
+ {
+  "w": "participate",
+  "s": 2,
+  "d": "to take part in an activity",
+  "e": "Over five hundred students participated in the survey.",
+  "f": [
+   "participant",
+   "participation",
+   "participated",
+   "participatory"
+  ]
+ },
+ {
+  "w": "perceive",
+  "s": 2,
+  "d": "to notice or understand in a particular way",
+  "e": "Many consumers perceive organic food as healthier.",
+  "f": [
+   "perception",
+   "perceived",
+   "perceptive",
+   "perceptible"
+  ]
+ },
+ {
+  "w": "positive",
+  "s": 2,
+  "d": "good, hopeful, or helpful; greater than zero",
+  "e": "The program had a positive effect on student attendance.",
+  "f": [
+   "positively"
+  ]
+ },
+ {
+  "w": "potential",
+  "s": 2,
+  "d": "possible but not yet actual",
+  "e": "The new drug has the potential to save many lives.",
+  "f": [
+   "potentially"
+  ]
+ },
+ {
+  "w": "previous",
+  "s": 2,
+  "d": "existing or happening before",
+  "e": "The results confirm the findings of previous studies.",
+  "f": [
+   "previously"
+  ]
+ },
+ {
+  "w": "primary",
+  "s": 2,
+  "d": "main or most important; first",
+  "e": "The primary goal of the program is to reduce poverty.",
+  "f": [
+   "primarily"
+  ]
+ },
+ {
+  "w": "purchase",
+  "s": 2,
+  "d": "to buy something",
+  "e": "Consumers increasingly purchase goods online.",
+  "f": [
+   "purchased",
+   "purchaser",
+   "purchasing",
+   "purchases"
+  ]
+ },
+ {
+  "w": "range",
+  "s": 2,
+  "d": "a set of different things of the same type",
+  "e": "The course covers a wide range of topics in economics.",
+  "f": [
+   "ranged",
+   "ranges",
+   "ranging"
+  ]
+ },
+ {
+  "w": "region",
+  "s": 2,
+  "d": "a large area of a country or the world",
+  "e": "The northern region receives very little rainfall.",
+  "f": [
+   "regional",
+   "regionally",
+   "regions"
+  ]
+ },
+ {
+  "w": "regulate",
+  "s": 2,
+  "d": "to control by rules",
+  "e": "Governments regulate the use of chemicals in food production.",
+  "f": [
+   "regulation",
+   "regulatory",
+   "regulator",
+   "deregulate"
+  ]
+ },
+ {
+  "w": "relevant",
+  "s": 2,
+  "d": "closely connected to the subject",
+  "e": "Include only relevant information in your summary.",
+  "f": [
+   "relevance",
+   "irrelevant",
+   "irrelevance"
+  ]
+ },
+ {
+  "w": "reside",
+  "s": 2,
+  "d": "to live in a particular place",
+  "e": "Most of the country's population resides in coastal cities.",
+  "f": [
+   "resident",
+   "residence",
+   "residential",
+   "resided"
+  ]
+ },
+ {
+  "w": "resource",
+  "s": 2,
+  "d": "a supply of something useful",
+  "e": "Water is a scarce resource in desert regions.",
+  "f": [
+   "resources",
+   "resourceful",
+   "resourced"
+  ]
+ },
+ {
+  "w": "restrict",
+  "s": 2,
+  "d": "to limit or control something",
+  "e": "The new rules restrict the use of plastic bags.",
+  "f": [
+   "restriction",
+   "restrictive",
+   "restricted",
+   "unrestricted"
+  ]
+ },
+ {
+  "w": "secure",
+  "s": 2,
+  "d": "safe; to obtain or protect",
+  "e": "The organization secured funding for another three years.",
+  "f": [
+   "security",
+   "securely",
+   "insecure",
+   "insecurity"
+  ]
+ },
+ {
+  "w": "seek",
+  "s": 2,
+  "d": "to try to find or get something",
+  "e": "Many refugees seek safety in neighboring countries.",
+  "f": [
+   "seeking",
+   "seeks",
+   "sought"
+  ]
+ },
+ {
+  "w": "select",
+  "s": 2,
+  "d": "to choose carefully",
+  "e": "Participants were selected at random from the population.",
+  "f": [
+   "selection",
+   "selective",
+   "selected",
+   "selectively"
+  ]
+ },
+ {
+  "w": "site",
+  "s": 2,
+  "d": "a place where something is or happens",
+  "e": "Archaeologists discovered ancient tools at the site.",
+  "f": [
+   "sites",
+   "sited"
+  ]
+ },
+ {
+  "w": "strategy",
+  "s": 2,
+  "d": "a plan to achieve a long-term goal",
+  "e": "The company developed a new strategy to attract younger customers.",
+  "f": [
+   "strategic",
+   "strategically",
+   "strategies",
+   "strategist"
+  ]
+ },
+ {
+  "w": "survey",
+  "s": 2,
+  "d": "a study of opinions using questions",
+  "e": "A national survey found that most citizens support the reform.",
+  "f": [
+   "surveyed",
+   "surveys",
+   "surveying"
+  ]
+ },
+ {
+  "w": "text",
+  "s": 2,
+  "d": "written words in a book, document, or message",
+  "e": "Students must read the text closely before answering the questions.",
+  "f": [
+   "texts",
+   "textual"
+  ]
+ },
+ {
+  "w": "tradition",
+  "s": 2,
+  "d": "a custom passed down over generations",
+  "e": "The festival is a tradition that dates back centuries.",
+  "f": [
+   "traditional",
+   "traditionally",
+   "traditions"
+  ]
+ },
+ {
+  "w": "transfer",
+  "s": 2,
+  "d": "to move from one place or person to another",
+  "e": "Heat is transferred from the warmer object to the cooler one.",
+  "f": [
+   "transferred",
+   "transferable",
+   "transferring"
+  ]
+ },
+ {
+  "w": "alternative",
+  "s": 3,
+  "d": "another possible choice",
+  "e": "Wind power offers a clean alternative to fossil fuels.",
+  "f": [
+   "alternatives",
+   "alternatively"
+  ]
+ },
+ {
+  "w": "circumstance",
+  "s": 3,
+  "d": "a condition or fact affecting a situation",
+  "e": "Under normal circumstances, the process takes about two weeks.",
+  "f": [
+   "circumstances",
+   "circumstantial"
+  ]
+ },
+ {
+  "w": "comment",
+  "s": 3,
+  "d": "a remark expressing an opinion",
+  "e": "Reviewers made several useful comments on the draft.",
+  "f": [
+   "comments",
+   "commentary",
+   "commentator",
+   "commented"
+  ]
+ },
+ {
+  "w": "compensate",
+  "s": 3,
+  "d": "to make up for a loss or harm",
+  "e": "Workers were compensated for injuries suffered on the job.",
+  "f": [
+   "compensation",
+   "compensatory",
+   "compensated"
+  ]
+ },
+ {
+  "w": "component",
+  "s": 3,
+  "d": "one of the parts of a larger whole",
+  "e": "Vocabulary is a key component of reading comprehension.",
+  "f": [
+   "components"
+  ]
+ },
+ {
+  "w": "consent",
+  "s": 3,
+  "d": "permission or agreement",
+  "e": "All participants gave written consent before the study began.",
+  "f": [
+   "consensus",
+   "consented",
+   "consenting"
+  ]
+ },
+ {
+  "w": "considerable",
+  "s": 3,
+  "d": "large in size, amount, or importance",
+  "e": "The project required a considerable amount of time and money.",
+  "f": [
+   "considerably"
+  ]
+ },
+ {
+  "w": "constant",
+  "s": 3,
+  "d": "happening all the time; not changing",
+  "e": "The machine must be kept at a constant temperature.",
+  "f": [
+   "constantly",
+   "constancy",
+   "inconstant"
+  ]
+ },
+ {
+  "w": "constrain",
+  "s": 3,
+  "d": "to limit or restrict",
+  "e": "Economic growth was constrained by a shortage of skilled workers.",
+  "f": [
+   "constraint",
+   "constrained",
+   "unconstrained"
+  ]
+ },
+ {
+  "w": "contribute",
+  "s": 3,
+  "d": "to give or add to something",
+  "e": "Many factors contributed to the decline of the empire.",
+  "f": [
+   "contribution",
+   "contributor",
+   "contributory",
+   "contributed"
+  ]
+ },
+ {
+  "w": "convene",
+  "s": 3,
+  "d": "to come together for a formal meeting",
+  "e": "World leaders convened to discuss climate change.",
+  "f": [
+   "convention",
+   "conventional",
+   "unconventional",
+   "convened"
+  ]
+ },
+ {
+  "w": "coordinate",
+  "s": 3,
+  "d": "to organize people or activities to work together",
+  "e": "A central agency coordinates the emergency response.",
+  "f": [
+   "coordination",
+   "coordinator",
+   "coordinated"
+  ]
+ },
+ {
+  "w": "core",
+  "s": 3,
+  "d": "the central or most important part",
+  "e": "Reading and writing are core skills in every subject.",
+  "f": [
+   "cores"
+  ]
+ },
+ {
+  "w": "corporate",
+  "s": 3,
+  "d": "related to a large company",
+  "e": "Corporate profits rose sharply in the third quarter.",
+  "f": [
+   "corporation",
+   "corporations"
+  ]
+ },
+ {
+  "w": "correspond",
+  "s": 3,
+  "d": "to match or be similar; to exchange letters",
+  "e": "The results correspond closely with earlier predictions.",
+  "f": [
+   "correspondence",
+   "corresponding",
+   "correspondent"
+  ]
+ },
+ {
+  "w": "criteria",
+  "s": 3,
+  "d": "standards used for judging something",
+  "e": "Applicants are evaluated according to several criteria.",
+  "f": [
+   "criterion"
+  ]
+ },
+ {
+  "w": "deduce",
+  "s": 3,
+  "d": "to reach a conclusion by reasoning",
+  "e": "From the evidence, scientists deduced that the lake was once larger.",
+  "f": [
+   "deduction",
+   "deductive",
+   "deduced"
+  ]
+ },
+ {
+  "w": "demonstrate",
+  "s": 3,
+  "d": "to show clearly with evidence",
+  "e": "The study demonstrates the value of early education.",
+  "f": [
+   "demonstration",
+   "demonstrable",
+   "demonstrated",
+   "demonstrator"
+  ]
+ },
+ {
+  "w": "document",
+  "s": 3,
+  "d": "an official paper or record",
+  "e": "Historians examined thousands of documents from the period.",
+  "f": [
+   "documentation",
+   "documentary",
+   "documented"
+  ]
+ },
+ {
+  "w": "dominate",
+  "s": 3,
+  "d": "to control or be the most important",
+  "e": "A few large firms dominate the global software market.",
+  "f": [
+   "dominance",
+   "dominant",
+   "domination",
+   "dominated"
+  ]
+ },
+ {
+  "w": "emphasis",
+  "s": 3,
+  "d": "special importance given to something",
+  "e": "The curriculum places strong emphasis on critical thinking.",
+  "f": [
+   "emphasize",
+   "emphatic",
+   "emphatically"
+  ]
+ },
+ {
+  "w": "ensure",
+  "s": 3,
+  "d": "to make certain that something happens",
+  "e": "Regular testing ensures that the water is safe to drink.",
+  "f": [
+   "ensured",
+   "ensures",
+   "ensuring"
+  ]
+ },
+ {
+  "w": "exclude",
+  "s": 3,
+  "d": "to leave out or keep out",
+  "e": "Incomplete responses were excluded from the analysis.",
+  "f": [
+   "exclusion",
+   "exclusive",
+   "exclusively",
+   "excluded"
+  ]
+ },
+ {
+  "w": "framework",
+  "s": 3,
+  "d": "a basic structure of ideas or rules",
+  "e": "The theory provides a useful framework for analyzing behavior.",
+  "f": [
+   "frameworks"
+  ]
+ },
+ {
+  "w": "fund",
+  "s": 3,
+  "d": "an amount of money for a purpose",
+  "e": "The research was funded by a national science agency.",
+  "f": [
+   "funding",
+   "funded",
+   "funds",
+   "underfunded"
+  ]
+ },
+ {
+  "w": "illustrate",
+  "s": 3,
+  "d": "to explain or show with examples",
+  "e": "The chart illustrates changes in population over time.",
+  "f": [
+   "illustration",
+   "illustrative",
+   "illustrated"
+  ]
+ },
+ {
+  "w": "immigrate",
+  "s": 3,
+  "d": "to come to live permanently in another country",
+  "e": "Many families immigrated to the city in search of work.",
+  "f": [
+   "immigrant",
+   "immigration",
+   "immigrated"
+  ]
+ },
+ {
+  "w": "imply",
+  "s": 3,
+  "d": "to suggest something without saying it directly",
+  "e": "The results imply that the drug may have side effects.",
+  "f": [
+   "implication",
+   "implicit",
+   "implied",
+   "implicitly"
+  ]
+ },
+ {
+  "w": "initial",
+  "s": 3,
+  "d": "happening at the beginning; first",
+  "e": "Initial results from the trial appear promising.",
+  "f": [
+   "initially"
+  ]
+ },
+ {
+  "w": "instance",
+  "s": 3,
+  "d": "an example or single occurrence",
+  "e": "In many instances, the cost of repair exceeded the value.",
+  "f": [
+   "instances"
+  ]
+ },
+ {
+  "w": "interact",
+  "s": 3,
+  "d": "to communicate or act on each other",
+  "e": "Children learn by interacting with their environment.",
+  "f": [
+   "interaction",
+   "interactive",
+   "interacted"
+  ]
+ },
+ {
+  "w": "justify",
+  "s": 3,
+  "d": "to give a good reason for something",
+  "e": "The author fails to justify several of her claims.",
+  "f": [
+   "justification",
+   "justifiable",
+   "justified",
+   "unjustified"
+  ]
+ },
+ {
+  "w": "layer",
+  "s": 3,
+  "d": "a level of material lying over or under another",
+  "e": "A thin layer of ice covered the surface of the lake.",
+  "f": [
+   "layers",
+   "layered",
+   "layering"
+  ]
+ },
+ {
+  "w": "link",
+  "s": 3,
+  "d": "a connection between things",
+  "e": "Scientists have found a link between smoking and lung disease.",
+  "f": [
+   "linked",
+   "linkage",
+   "links",
+   "linking"
+  ]
+ },
+ {
+  "w": "locate",
+  "s": 3,
+  "d": "to find or be in a particular place",
+  "e": "The factory is located near a major port.",
+  "f": [
+   "location",
+   "located",
+   "relocate",
+   "relocation"
+  ]
+ },
+ {
+  "w": "maximize",
+  "s": 3,
+  "d": "to make something as large as possible",
+  "e": "Farmers use fertilizers to maximize crop yields.",
+  "f": [
+   "maximise",
+   "maximum",
+   "maximization",
+   "maximal"
+  ]
+ },
+ {
+  "w": "minor",
+  "s": 3,
+  "d": "small or less important",
+  "e": "The changes had only a minor effect on overall costs.",
+  "f": [
+   "minority",
+   "minorities"
+  ]
+ },
+ {
+  "w": "negate",
+  "s": 3,
+  "d": "to cancel the effect of something",
+  "e": "Rising costs negated the benefits of the tax cut.",
+  "f": [
+   "negative",
+   "negatively",
+   "negation",
+   "negated"
+  ]
+ },
+ {
+  "w": "outcome",
+  "s": 3,
+  "d": "the result or effect of an action",
+  "e": "The outcome of the election surprised many observers.",
+  "f": [
+   "outcomes"
+  ]
+ },
+ {
+  "w": "partner",
+  "s": 3,
+  "d": "a person or group sharing an activity",
+  "e": "The university works with industry partners on research projects.",
+  "f": [
+   "partnership",
+   "partners",
+   "partnered"
+  ]
+ },
+ {
+  "w": "philosophy",
+  "s": 3,
+  "d": "the study of basic ideas about knowledge and life",
+  "e": "Ancient Greek philosophy influenced Western thought for centuries.",
+  "f": [
+   "philosopher",
+   "philosophical",
+   "philosophically"
+  ]
+ },
+ {
+  "w": "physical",
+  "s": 3,
+  "d": "related to the body or to material things",
+  "e": "Regular physical activity reduces the risk of disease.",
+  "f": [
+   "physically"
+  ]
+ },
+ {
+  "w": "proportion",
+  "s": 3,
+  "d": "a part or share of a whole",
+  "e": "A large proportion of the budget is spent on healthcare.",
+  "f": [
+   "proportional",
+   "proportionate",
+   "disproportionate",
+   "proportions"
+  ]
+ },
+ {
+  "w": "publish",
+  "s": 3,
+  "d": "to print and distribute written work",
+  "e": "The results were published in a leading medical journal.",
+  "f": [
+   "publication",
+   "publisher",
+   "published",
+   "unpublished"
+  ]
+ },
+ {
+  "w": "react",
+  "s": 3,
+  "d": "to respond to something",
+  "e": "Markets reacted quickly to the interest rate announcement.",
+  "f": [
+   "reaction",
+   "reactive",
+   "reactor",
+   "reacted"
+  ]
+ },
+ {
+  "w": "register",
+  "s": 3,
+  "d": "to put a name on an official list",
+  "e": "Voters must register before the election deadline.",
+  "f": [
+   "registration",
+   "registered",
+   "registry"
+  ]
+ },
+ {
+  "w": "rely",
+  "s": 3,
+  "d": "to depend on someone or something",
+  "e": "Many farmers rely on rainfall to water their crops.",
+  "f": [
+   "reliable",
+   "reliability",
+   "reliance",
+   "unreliable"
+  ]
+ },
+ {
+  "w": "remove",
+  "s": 3,
+  "d": "to take something away",
+  "e": "The pollutants are removed by a series of filters.",
+  "f": [
+   "removal",
+   "removed",
+   "removable"
+  ]
+ },
+ {
+  "w": "scheme",
+  "s": 3,
+  "d": "a plan or system for doing something",
+  "e": "The government launched a scheme to help first-time home buyers.",
+  "f": [
+   "schemes",
+   "schematic"
+  ]
+ },
+ {
+  "w": "sequence",
+  "s": 3,
+  "d": "a series of things in a particular order",
+  "e": "The genes are arranged in a specific sequence.",
+  "f": [
+   "sequences",
+   "sequential",
+   "sequentially"
+  ]
+ },
+ {
+  "w": "sex",
+  "s": 3,
+  "d": "the biological category of male or female",
+  "e": "The data were analyzed by age and sex.",
+  "f": [
+   "sexes",
+   "sexual",
+   "sexuality"
+  ]
+ },
+ {
+  "w": "shift",
+  "s": 3,
+  "d": "a change in position or direction",
+  "e": "There has been a shift in public attitudes toward recycling.",
+  "f": [
+   "shifted",
+   "shifting",
+   "shifts"
+  ]
+ },
+ {
+  "w": "specify",
+  "s": 3,
+  "d": "to state something clearly and exactly",
+  "e": "The contract specifies the date of delivery.",
+  "f": [
+   "specification",
+   "specified",
+   "unspecified"
+  ]
+ },
+ {
+  "w": "sufficient",
+  "s": 3,
+  "d": "enough for a particular purpose",
+  "e": "There is not sufficient evidence to support the claim.",
+  "f": [
+   "sufficiency",
+   "sufficiently",
+   "insufficient"
+  ]
+ },
+ {
+  "w": "task",
+  "s": 3,
+  "d": "a piece of work to be done",
+  "e": "Participants completed a series of memory tasks.",
+  "f": [
+   "tasks"
+  ]
+ },
+ {
+  "w": "technical",
+  "s": 3,
+  "d": "related to practical or scientific knowledge",
+  "e": "The report uses a lot of technical vocabulary.",
+  "f": [
+   "technically"
+  ]
+ },
+ {
+  "w": "technique",
+  "s": 3,
+  "d": "a particular method of doing something",
+  "e": "The artist used a new technique to create depth.",
+  "f": [
+   "techniques"
+  ]
+ },
+ {
+  "w": "technology",
+  "s": 3,
+  "d": "scientific knowledge used for practical purposes",
+  "e": "Mobile technology has changed how people communicate.",
+  "f": [
+   "technological",
+   "technologically",
+   "technologies"
+  ]
+ },
+ {
+  "w": "valid",
+  "s": 3,
+  "d": "logically correct or officially acceptable",
+  "e": "The researchers questioned whether the test was valid.",
+  "f": [
+   "validity",
+   "validate",
+   "validation",
+   "invalid"
+  ]
+ },
+ {
+  "w": "volume",
+  "s": 3,
+  "d": "amount or quantity; one book in a series",
+  "e": "The volume of online sales has increased dramatically.",
+  "f": [
+   "volumes"
+  ]
+ },
+ {
+  "w": "access",
+  "s": 4,
+  "d": "the ability or right to use something",
+  "e": "Millions of people still lack access to clean water.",
+  "f": [
+   "accessible",
+   "accessibility",
+   "inaccessible",
+   "accessed"
+  ]
+ },
+ {
+  "w": "adequate",
+  "s": 4,
+  "d": "enough or good enough",
+  "e": "The region lacks adequate health facilities.",
+  "f": [
+   "adequacy",
+   "adequately",
+   "inadequate"
+  ]
+ },
+ {
+  "w": "annual",
+  "s": 4,
+  "d": "happening once a year",
+  "e": "The annual report summarizes the company's performance.",
+  "f": [
+   "annually"
+  ]
+ },
+ {
+  "w": "apparent",
+  "s": 4,
+  "d": "easy to see or understand; seeming",
+  "e": "It soon became apparent that the plan would fail.",
+  "f": [
+   "apparently"
+  ]
+ },
+ {
+  "w": "approximate",
+  "s": 4,
+  "d": "close to but not exactly correct",
+  "e": "The approximate cost of the project is two million dollars.",
+  "f": [
+   "approximately",
+   "approximation",
+   "approximated"
+  ]
+ },
+ {
+  "w": "attitude",
+  "s": 4,
+  "d": "a way of thinking or feeling about something",
+  "e": "Public attitudes toward smoking have changed greatly.",
+  "f": [
+   "attitudes"
+  ]
+ },
+ {
+  "w": "attribute",
+  "s": 4,
+  "d": "to say something is caused by something else",
+  "e": "The decline in crime is often attributed to better policing.",
+  "f": [
+   "attribution",
+   "attributable",
+   "attributed"
+  ]
+ },
+ {
+  "w": "civil",
+  "s": 4,
+  "d": "related to citizens or ordinary society",
+  "e": "Civil rights groups campaigned for equal treatment under the law.",
+  "f": [
+   "civilian",
+   "civility"
+  ]
+ },
+ {
+  "w": "code",
+  "s": 4,
+  "d": "a set of rules or a system of signals",
+  "e": "Employees must follow the company's code of conduct.",
+  "f": [
+   "codes",
+   "coded",
+   "coding"
+  ]
+ },
+ {
+  "w": "commit",
+  "s": 4,
+  "d": "to promise or dedicate; to do something wrong",
+  "e": "The government committed to reducing carbon emissions.",
+  "f": [
+   "commitment",
+   "committed",
+   "uncommitted"
+  ]
+ },
+ {
+  "w": "communicate",
+  "s": 4,
+  "d": "to share information or ideas",
+  "e": "Bees communicate the location of food through dance.",
+  "f": [
+   "communication",
+   "communicative",
+   "communicated"
+  ]
+ },
+ {
+  "w": "concentrate",
+  "s": 4,
+  "d": "to focus attention or bring together",
+  "e": "Industry is concentrated in the northern part of the country.",
+  "f": [
+   "concentration",
+   "concentrated",
+   "concentrating"
+  ]
+ },
+ {
+  "w": "confer",
+  "s": 4,
+  "d": "to discuss together; to give an honor",
+  "e": "The committee conferred before announcing its decision.",
+  "f": [
+   "conference",
+   "conferred",
+   "conferring"
+  ]
+ },
+ {
+  "w": "contrast",
+  "s": 4,
+  "d": "an obvious difference between things",
+  "e": "In contrast to cities, rural areas have lower living costs.",
+  "f": [
+   "contrasting",
+   "contrasted",
+   "contrastive"
+  ]
+ },
+ {
+  "w": "cycle",
+  "s": 4,
+  "d": "a series of events that repeat",
+  "e": "The water cycle moves water between the ocean, air, and land.",
+  "f": [
+   "cyclical",
+   "cycles",
+   "cyclic"
+  ]
+ },
+ {
+  "w": "debate",
+  "s": 4,
+  "d": "a formal discussion of opposing views",
+  "e": "There is ongoing debate about the causes of the decline.",
+  "f": [
+   "debatable",
+   "debated",
+   "debates"
+  ]
+ },
+ {
+  "w": "despite",
+  "s": 4,
+  "d": "without being affected by",
+  "e": "Despite the high cost, the project was completed on time.",
+  "f": []
+ },
+ {
+  "w": "dimension",
+  "s": 4,
+  "d": "a measurable extent or an aspect",
+  "e": "The problem has economic, social, and political dimensions.",
+  "f": [
+   "dimensions",
+   "dimensional"
+  ]
+ },
+ {
+  "w": "domestic",
+  "s": 4,
+  "d": "related to one's own country or the home",
+  "e": "Domestic demand for electricity continues to rise.",
+  "f": [
+   "domestically",
+   "domesticate",
+   "domesticated"
+  ]
+ },
+ {
+  "w": "emerge",
+  "s": 4,
+  "d": "to appear or become known",
+  "e": "New evidence emerged during the investigation.",
+  "f": [
+   "emergence",
+   "emergent",
+   "emerging",
+   "emerged"
+  ]
+ },
+ {
+  "w": "error",
+  "s": 4,
+  "d": "a mistake",
+  "e": "A small error in the calculation affected the final result.",
+  "f": [
+   "errors",
+   "erroneous"
+  ]
+ },
+ {
+  "w": "ethnic",
+  "s": 4,
+  "d": "related to a group with a shared culture",
+  "e": "The city is home to many ethnic communities.",
+  "f": [
+   "ethnicity",
+   "ethnically"
+  ]
+ },
+ {
+  "w": "goal",
+  "s": 4,
+  "d": "an aim or purpose",
+  "e": "The main goal of the study was to measure stress levels.",
+  "f": [
+   "goals"
+  ]
+ },
+ {
+  "w": "grant",
+  "s": 4,
+  "d": "money given for a purpose; to allow",
+  "e": "The researchers received a grant to study ocean pollution.",
+  "f": [
+   "granted",
+   "grants",
+   "granting"
+  ]
+ },
+ {
+  "w": "hence",
+  "s": 4,
+  "d": "for this reason; therefore",
+  "e": "The soil is poor, hence the low crop yields.",
+  "f": []
+ },
+ {
+  "w": "hypothesis",
+  "s": 4,
+  "d": "an idea that can be tested",
+  "e": "The experiment was designed to test the hypothesis.",
+  "f": [
+   "hypotheses",
+   "hypothetical",
+   "hypothesize"
+  ]
+ },
+ {
+  "w": "implement",
+  "s": 4,
+  "d": "to put a plan or system into action",
+  "e": "The school implemented a new reading program last year.",
+  "f": [
+   "implementation",
+   "implemented",
+   "implementing"
+  ]
+ },
+ {
+  "w": "implicate",
+  "s": 4,
+  "d": "to show someone or something is involved",
+  "e": "Several genes have been implicated in the disease.",
+  "f": [
+   "implicated",
+   "implication",
+   "implicating"
+  ]
+ },
+ {
+  "w": "impose",
+  "s": 4,
+  "d": "to force a rule or burden on others",
+  "e": "The government imposed new taxes on imported goods.",
+  "f": [
+   "imposition",
+   "imposed",
+   "imposing"
+  ]
+ },
+ {
+  "w": "integrate",
+  "s": 4,
+  "d": "to combine into a whole",
+  "e": "The course integrates theory with practical experience.",
+  "f": [
+   "integration",
+   "integrated",
+   "integral"
+  ]
+ },
+ {
+  "w": "internal",
+  "s": 4,
+  "d": "inside something",
+  "e": "The company conducted an internal review of its policies.",
+  "f": [
+   "internally",
+   "internalize"
+  ]
+ },
+ {
+  "w": "investigate",
+  "s": 4,
+  "d": "to examine carefully to find the truth",
+  "e": "Police are investigating the cause of the fire.",
+  "f": [
+   "investigation",
+   "investigator",
+   "investigative",
+   "investigated"
+  ]
+ },
+ {
+  "w": "job",
+  "s": 4,
+  "d": "paid work or a particular task",
+  "e": "The new factory created hundreds of jobs.",
+  "f": [
+   "jobs",
+   "jobless"
+  ]
+ },
+ {
+  "w": "label",
+  "s": 4,
+  "d": "a name or description attached to something",
+  "e": "Food labels must list all ingredients.",
+  "f": [
+   "labeled",
+   "labels",
+   "labelling",
+   "labeling"
+  ]
+ },
+ {
+  "w": "mechanism",
+  "s": 4,
+  "d": "a process or part that makes something work",
+  "e": "Scientists are still studying the mechanism behind the disease.",
+  "f": [
+   "mechanisms",
+   "mechanical",
+   "mechanically"
+  ]
+ },
+ {
+  "w": "obvious",
+  "s": 4,
+  "d": "easy to see or understand",
+  "e": "There is an obvious link between diet and health.",
+  "f": [
+   "obviously"
+  ]
+ },
+ {
+  "w": "occupy",
+  "s": 4,
+  "d": "to fill or use a space or time",
+  "e": "Forests once occupied most of the region.",
+  "f": [
+   "occupation",
+   "occupant",
+   "occupied",
+   "occupational"
+  ]
+ },
+ {
+  "w": "option",
+  "s": 4,
+  "d": "a choice that can be made",
+  "e": "Students have several options for completing the course.",
+  "f": [
+   "optional",
+   "options"
+  ]
+ },
+ {
+  "w": "output",
+  "s": 4,
+  "d": "the amount produced",
+  "e": "Industrial output increased by five percent last year.",
+  "f": [
+   "outputs"
+  ]
+ },
+ {
+  "w": "overall",
+  "s": 4,
+  "d": "considering everything; in general",
+  "e": "Overall, the results were very encouraging.",
+  "f": []
+ },
+ {
+  "w": "parallel",
+  "s": 4,
+  "d": "similar or happening at the same time",
+  "e": "The two studies were conducted in parallel.",
+  "f": [
+   "parallels",
+   "paralleled",
+   "unparalleled"
+  ]
+ },
+ {
+  "w": "parameter",
+  "s": 4,
+  "d": "a limit or factor that defines a system",
+  "e": "The researchers set clear parameters for the experiment.",
+  "f": [
+   "parameters"
+  ]
+ },
+ {
+  "w": "phase",
+  "s": 4,
+  "d": "a stage in a process",
+  "e": "The project is now entering its final phase.",
+  "f": [
+   "phases",
+   "phased"
+  ]
+ },
+ {
+  "w": "predict",
+  "s": 4,
+  "d": "to say what will happen in the future",
+  "e": "Scientists predict that sea levels will continue to rise.",
+  "f": [
+   "prediction",
+   "predictable",
+   "unpredictable",
+   "predictor"
+  ]
+ },
+ {
+  "w": "principal",
+  "s": 4,
+  "d": "main or most important",
+  "e": "The principal cause of the accident was human error.",
+  "f": [
+   "principally"
+  ]
+ },
+ {
+  "w": "prior",
+  "s": 4,
+  "d": "earlier; happening before",
+  "e": "No prior experience is required for the course.",
+  "f": [
+   "priority",
+   "priorities",
+   "prioritize"
+  ]
+ },
+ {
+  "w": "professional",
+  "s": 4,
+  "d": "related to a job requiring special training",
+  "e": "Doctors and lawyers must meet strict professional standards.",
+  "f": [
+   "profession",
+   "professionally",
+   "professionalism"
+  ]
+ },
+ {
+  "w": "project",
+  "s": 4,
+  "d": "a planned piece of work",
+  "e": "The research project lasted three years.",
+  "f": [
+   "projected",
+   "projection",
+   "projects"
+  ]
+ },
+ {
+  "w": "promote",
+  "s": 4,
+  "d": "to support or encourage something",
+  "e": "Exercise promotes better sleep and mood.",
+  "f": [
+   "promotion",
+   "promoter",
+   "promotional",
+   "promoted"
+  ]
+ },
+ {
+  "w": "regime",
+  "s": 4,
+  "d": "a system of government or management",
+  "e": "The old regime was replaced after years of protest.",
+  "f": [
+   "regimes"
+  ]
+ },
+ {
+  "w": "resolve",
+  "s": 4,
+  "d": "to find a solution to a problem",
+  "e": "The two sides met to resolve their disagreement.",
+  "f": [
+   "resolution",
+   "resolved",
+   "unresolved"
+  ]
+ },
+ {
+  "w": "retain",
+  "s": 4,
+  "d": "to keep or continue to have",
+  "e": "The soil retains moisture for several days after rain.",
+  "f": [
+   "retention",
+   "retained",
+   "retaining"
+  ]
+ },
+ {
+  "w": "series",
+  "s": 4,
+  "d": "a number of similar things in order",
+  "e": "The author published a series of articles on the topic.",
+  "f": []
+ },
+ {
+  "w": "statistic",
+  "s": 4,
+  "d": "a number that represents a fact",
+  "e": "Official statistics show a decline in unemployment.",
+  "f": [
+   "statistics",
+   "statistical",
+   "statistically",
+   "statistician"
+  ]
+ },
+ {
+  "w": "status",
+  "s": 4,
+  "d": "position or rank in relation to others",
+  "e": "Education can improve a person's social status.",
+  "f": []
+ },
+ {
+  "w": "stress",
+  "s": 4,
+  "d": "pressure or worry; to emphasize",
+  "e": "The author stresses the importance of early intervention.",
+  "f": [
+   "stressed",
+   "stressful",
+   "stresses"
+  ]
+ },
+ {
+  "w": "subsequent",
+  "s": 4,
+  "d": "coming after something else",
+  "e": "Subsequent studies confirmed the original findings.",
+  "f": [
+   "subsequently"
+  ]
+ },
+ {
+  "w": "sum",
+  "s": 4,
+  "d": "an amount of money; a total",
+  "e": "The government invested a large sum in public housing.",
+  "f": [
+   "summation",
+   "sums",
+   "summed"
+  ]
+ },
+ {
+  "w": "summary",
+  "s": 4,
+  "d": "a short statement of the main points",
+  "e": "Write a brief summary of the lecture.",
+  "f": [
+   "summarize",
+   "summaries",
+   "summarized"
+  ]
+ },
+ {
+  "w": "undertake",
+  "s": 4,
+  "d": "to begin or take responsibility for a task",
+  "e": "The university undertook a major study of student life.",
+  "f": [
+   "undertaking",
+   "undertaken",
+   "undertook"
+  ]
+ },
+ {
+  "w": "academy",
+  "s": 5,
+  "d": "a school or institution for special training",
+  "e": "She was accepted into a national academy of music.",
+  "f": [
+   "academic",
+   "academically",
+   "academics"
+  ]
+ },
+ {
+  "w": "adjust",
+  "s": 5,
+  "d": "to change slightly to fit or improve",
+  "e": "Students needed time to adjust to the new environment.",
+  "f": [
+   "adjustment",
+   "adjusted",
+   "adjustable"
+  ]
+ },
+ {
+  "w": "alter",
+  "s": 5,
+  "d": "to change something",
+  "e": "The new evidence altered our understanding of the event.",
+  "f": [
+   "alteration",
+   "altered",
+   "unaltered"
+  ]
+ },
+ {
+  "w": "amend",
+  "s": 5,
+  "d": "to make changes to a law or document",
+  "e": "Congress voted to amend the existing law.",
+  "f": [
+   "amendment",
+   "amended",
+   "amending"
+  ]
+ },
+ {
+  "w": "aware",
+  "s": 5,
+  "d": "knowing that something exists",
+  "e": "Many people are not aware of the risks of the disease.",
+  "f": [
+   "awareness",
+   "unaware"
+  ]
+ },
+ {
+  "w": "capacity",
+  "s": 5,
+  "d": "the ability or maximum amount possible",
+  "e": "The stadium has a capacity of fifty thousand people.",
+  "f": [
+   "capacities",
+   "incapacity"
+  ]
+ },
+ {
+  "w": "challenge",
+  "s": 5,
+  "d": "a difficult task or a questioning of something",
+  "e": "Climate change is one of the greatest challenges of our time.",
+  "f": [
+   "challenging",
+   "challenged",
+   "challenger"
+  ]
+ },
+ {
+  "w": "clause",
+  "s": 5,
+  "d": "a section of a legal document; part of a sentence",
+  "e": "The contract includes a clause on early termination.",
+  "f": [
+   "clauses"
+  ]
+ },
+ {
+  "w": "compound",
+  "s": 5,
+  "d": "a substance made of two or more elements",
+  "e": "Water is a compound of hydrogen and oxygen.",
+  "f": [
+   "compounds",
+   "compounded"
+  ]
+ },
+ {
+  "w": "conflict",
+  "s": 5,
+  "d": "a serious disagreement or fight",
+  "e": "The conflict between the two nations lasted decades.",
+  "f": [
+   "conflicting",
+   "conflicts",
+   "conflicted"
+  ]
+ },
+ {
+  "w": "consult",
+  "s": 5,
+  "d": "to ask for advice or information",
+  "e": "Patients should consult a doctor before changing medication.",
+  "f": [
+   "consultation",
+   "consultant",
+   "consulted",
+   "consultancy"
+  ]
+ },
+ {
+  "w": "contact",
+  "s": 5,
+  "d": "communication or touch between people or things",
+  "e": "The virus spreads through direct contact with infected surfaces.",
+  "f": [
+   "contacted",
+   "contactable",
+   "contacts"
+  ]
+ },
+ {
+  "w": "decline",
+  "s": 5,
+  "d": "a decrease in amount or quality",
+  "e": "The region experienced a sharp decline in population.",
+  "f": [
+   "declined",
+   "declining",
+   "declines"
+  ]
+ },
+ {
+  "w": "discrete",
+  "s": 5,
+  "d": "clearly separate",
+  "e": "The process can be divided into discrete stages.",
+  "f": [
+   "discretely",
+   "discretion"
+  ]
+ },
+ {
+  "w": "draft",
+  "s": 5,
+  "d": "an early version of a piece of writing",
+  "e": "Students submit a first draft before the final essay.",
+  "f": [
+   "drafted",
+   "drafting",
+   "drafts"
+  ]
+ },
+ {
+  "w": "enable",
+  "s": 5,
+  "d": "to make something possible",
+  "e": "New technology enables scientists to map the ocean floor.",
+  "f": [
+   "enabled",
+   "enabling",
+   "enables"
+  ]
+ },
+ {
+  "w": "energy",
+  "s": 5,
+  "d": "power used to provide heat or operate machines",
+  "e": "Solar energy is becoming cheaper every year.",
+  "f": [
+   "energetic",
+   "energetically",
+   "energies"
+  ]
+ },
+ {
+  "w": "enforce",
+  "s": 5,
+  "d": "to make sure a law or rule is obeyed",
+  "e": "Police are responsible for enforcing traffic laws.",
+  "f": [
+   "enforcement",
+   "enforced",
+   "enforceable"
+  ]
+ },
+ {
+  "w": "entity",
+  "s": 5,
+  "d": "something that exists as a separate unit",
+  "e": "The company operates as an independent legal entity.",
+  "f": [
+   "entities"
+  ]
+ },
+ {
+  "w": "equivalent",
+  "s": 5,
+  "d": "equal in value, amount, or meaning",
+  "e": "One mile is roughly equivalent to 1.6 kilometers.",
+  "f": [
+   "equivalence",
+   "equivalents"
+  ]
+ },
+ {
+  "w": "evolve",
+  "s": 5,
+  "d": "to develop gradually over time",
+  "e": "Birds are believed to have evolved from dinosaurs.",
+  "f": [
+   "evolution",
+   "evolutionary",
+   "evolved",
+   "evolving"
+  ]
+ },
+ {
+  "w": "expand",
+  "s": 5,
+  "d": "to become larger",
+  "e": "The company plans to expand into new markets.",
+  "f": [
+   "expansion",
+   "expansive",
+   "expanded"
+  ]
+ },
+ {
+  "w": "expose",
+  "s": 5,
+  "d": "to uncover or leave unprotected",
+  "e": "Workers were exposed to dangerous chemicals.",
+  "f": [
+   "exposure",
+   "exposed",
+   "exposing"
+  ]
+ },
+ {
+  "w": "external",
+  "s": 5,
+  "d": "outside something",
+  "e": "External factors, such as weather, affected the results.",
+  "f": [
+   "externally",
+   "externalize"
+  ]
+ },
+ {
+  "w": "facilitate",
+  "s": 5,
+  "d": "to make an action or process easier",
+  "e": "Good lighting facilitates reading and studying.",
+  "f": [
+   "facilitator",
+   "facilitation",
+   "facilitated"
+  ]
+ },
+ {
+  "w": "fundamental",
+  "s": 5,
+  "d": "basic and most important",
+  "e": "Freedom of speech is a fundamental right.",
+  "f": [
+   "fundamentally",
+   "fundamentals"
+  ]
+ },
+ {
+  "w": "generate",
+  "s": 5,
+  "d": "to produce or create",
+  "e": "Wind turbines generate electricity for thousands of homes.",
+  "f": [
+   "generated",
+   "generating",
+   "generator"
+  ]
+ },
+ {
+  "w": "generation",
+  "s": 5,
+  "d": "people born around the same time",
+  "e": "Each generation faces its own economic challenges.",
+  "f": [
+   "generations",
+   "generational"
+  ]
+ },
+ {
+  "w": "image",
+  "s": 5,
+  "d": "a picture or the way something is seen",
+  "e": "The company worked to improve its public image.",
+  "f": [
+   "images",
+   "imagery"
+  ]
+ },
+ {
+  "w": "liberal",
+  "s": 5,
+  "d": "open to new ideas; favoring individual freedom",
+  "e": "The city is known for its liberal social policies.",
+  "f": [
+   "liberalism",
+   "liberalize",
+   "liberally",
+   "liberate"
+  ]
+ },
+ {
+  "w": "license",
+  "s": 5,
+  "d": "an official permission document",
+  "e": "Drivers must carry their license at all times.",
+  "f": [
+   "licence",
+   "licensed",
+   "licensing",
+   "unlicensed"
+  ]
+ },
+ {
+  "w": "logic",
+  "s": 5,
+  "d": "a method of reasoning",
+  "e": "The logic of the argument is difficult to follow.",
+  "f": [
+   "logical",
+   "logically",
+   "illogical"
+  ]
+ },
+ {
+  "w": "margin",
+  "s": 5,
+  "d": "an edge or the difference between amounts",
+  "e": "The candidate won by a narrow margin.",
+  "f": [
+   "marginal",
+   "marginally",
+   "marginalize",
+   "margins"
+  ]
+ },
+ {
+  "w": "medical",
+  "s": 5,
+  "d": "related to medicine or treatment",
+  "e": "Many rural areas lack basic medical services.",
+  "f": [
+   "medically",
+   "medicine"
+  ]
+ },
+ {
+  "w": "mental",
+  "s": 5,
+  "d": "related to the mind",
+  "e": "Exercise benefits both physical and mental health.",
+  "f": [
+   "mentally",
+   "mentality"
+  ]
+ },
+ {
+  "w": "modify",
+  "s": 5,
+  "d": "to change something slightly",
+  "e": "The researchers modified the design to reduce costs.",
+  "f": [
+   "modification",
+   "modified",
+   "unmodified"
+  ]
+ },
+ {
+  "w": "monitor",
+  "s": 5,
+  "d": "to watch or check over time",
+  "e": "Scientists monitor air quality in major cities.",
+  "f": [
+   "monitored",
+   "monitoring",
+   "monitors"
+  ]
+ },
+ {
+  "w": "network",
+  "s": 5,
+  "d": "a system of connected people or things",
+  "e": "The country has an extensive rail network.",
+  "f": [
+   "networks",
+   "networked",
+   "networking"
+  ]
+ },
+ {
+  "w": "notion",
+  "s": 5,
+  "d": "an idea or belief",
+  "e": "The study challenges the notion that money brings happiness.",
+  "f": [
+   "notions"
+  ]
+ },
+ {
+  "w": "objective",
+  "s": 5,
+  "d": "a goal; based on facts, not feelings",
+  "e": "The main objective of the course is to improve writing skills.",
+  "f": [
+   "objectively",
+   "objectivity",
+   "objectives"
+  ]
+ },
+ {
+  "w": "orient",
+  "s": 5,
+  "d": "to direct toward or adjust to something",
+  "e": "The program is oriented toward practical skills.",
+  "f": [
+   "orientation",
+   "oriented",
+   "reorient"
+  ]
+ },
+ {
+  "w": "perspective",
+  "s": 5,
+  "d": "a particular way of viewing things",
+  "e": "The book offers a fresh perspective on the war.",
+  "f": [
+   "perspectives"
+  ]
+ },
+ {
+  "w": "precise",
+  "s": 5,
+  "d": "exact and accurate",
+  "e": "The instrument provides precise measurements.",
+  "f": [
+   "precisely",
+   "precision",
+   "imprecise"
+  ]
+ },
+ {
+  "w": "prime",
+  "s": 5,
+  "d": "main or most important; of the best quality",
+  "e": "Smoking is a prime cause of lung disease.",
+  "f": [
+   "primed"
+  ]
+ },
+ {
+  "w": "psychology",
+  "s": 5,
+  "d": "the study of the mind and behavior",
+  "e": "Psychology helps explain why people make certain decisions.",
+  "f": [
+   "psychological",
+   "psychologist",
+   "psychologically"
+  ]
+ },
+ {
+  "w": "pursue",
+  "s": 5,
+  "d": "to follow or try to achieve something",
+  "e": "Many graduates choose to pursue careers in research.",
+  "f": [
+   "pursuit",
+   "pursued",
+   "pursuing"
+  ]
+ },
+ {
+  "w": "ratio",
+  "s": 5,
+  "d": "the relationship between two amounts",
+  "e": "The student-to-teacher ratio in the school is twenty to one.",
+  "f": [
+   "ratios"
+  ]
+ },
+ {
+  "w": "reject",
+  "s": 5,
+  "d": "to refuse to accept",
+  "e": "The committee rejected the proposal by a large majority.",
+  "f": [
+   "rejection",
+   "rejected",
+   "rejecting"
+  ]
+ },
+ {
+  "w": "revenue",
+  "s": 5,
+  "d": "income received by a business or government",
+  "e": "Tax revenue fell during the economic downturn.",
+  "f": [
+   "revenues"
+  ]
+ },
+ {
+  "w": "stable",
+  "s": 5,
+  "d": "firmly fixed; not likely to change",
+  "e": "The patient's condition remained stable overnight.",
+  "f": [
+   "stability",
+   "stabilize",
+   "unstable",
+   "instability"
+  ]
+ },
+ {
+  "w": "style",
+  "s": 5,
+  "d": "a particular way of doing or presenting something",
+  "e": "The author's writing style is clear and direct.",
+  "f": [
+   "styles",
+   "stylistic",
+   "stylish"
+  ]
+ },
+ {
+  "w": "substitute",
+  "s": 5,
+  "d": "to use one thing in place of another",
+  "e": "Honey can be substituted for sugar in this recipe.",
+  "f": [
+   "substitution",
+   "substituted",
+   "substitutes"
+  ]
+ },
+ {
+  "w": "sustain",
+  "s": 5,
+  "d": "to keep something going over time",
+  "e": "The economy cannot sustain this level of growth.",
+  "f": [
+   "sustainable",
+   "sustainability",
+   "sustained",
+   "unsustainable"
+  ]
+ },
+ {
+  "w": "symbol",
+  "s": 5,
+  "d": "a sign or object representing something else",
+  "e": "The dove is a symbol of peace.",
+  "f": [
+   "symbolic",
+   "symbolize",
+   "symbolism",
+   "symbols"
+  ]
+ },
+ {
+  "w": "target",
+  "s": 5,
+  "d": "a goal or object aimed at",
+  "e": "The government set a target to cut emissions by half.",
+  "f": [
+   "targeted",
+   "targets",
+   "targeting"
+  ]
+ },
+ {
+  "w": "transit",
+  "s": 5,
+  "d": "the movement of people or goods",
+  "e": "Many goods are damaged in transit.",
+  "f": [
+   "transition",
+   "transitional",
+   "transitory"
+  ]
+ },
+ {
+  "w": "trend",
+  "s": 5,
+  "d": "a general direction of change",
+  "e": "There is a growing trend toward remote work.",
+  "f": [
+   "trends",
+   "trending"
+  ]
+ },
+ {
+  "w": "version",
+  "s": 5,
+  "d": "a particular form of something",
+  "e": "The latest version of the software fixes several errors.",
+  "f": [
+   "versions"
+  ]
+ },
+ {
+  "w": "welfare",
+  "s": 5,
+  "d": "health, happiness, and well-being; public support",
+  "e": "The organization works to improve animal welfare.",
+  "f": []
+ },
+ {
+  "w": "whereas",
+  "s": 5,
+  "d": "while in contrast",
+  "e": "Some birds migrate, whereas others stay all year.",
+  "f": []
+ }
+]
