@@ -779,6 +779,14 @@
       {/if}
     </div>
 
+    {#if status === 'done'}
+      <div class="hud-center">
+        <button class="btn primary restart-mid-btn" onclick={initTest} title="Start next typing test (Enter or Tab+Enter)">
+          ↻ Restart Test
+        </button>
+      </div>
+    {/if}
+
     <div class="quick-toggles">
       <a class="chip alias-chip" href="#/stats" title="Your machine watch-brand alias on the shared leaderboard">
         ⌚ {settings.machineAlias}
@@ -1127,12 +1135,23 @@
   }
   .hud-bar {
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 1rem;
     min-height: 3.4rem;
     padding: 0 0.25rem;
+  }
+  .hud-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .restart-mid-btn {
+    padding: 0.45rem 1.2rem;
+    font-size: 0.95rem;
+    border-radius: 999px;
+    box-shadow: 0 2px 10px rgba(245, 185, 66, 0.22);
   }
   .live-metrics {
     display: flex;
