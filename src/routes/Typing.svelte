@@ -310,11 +310,8 @@
     if (!wordsBoxEl) return;
     const activeEl = wordsBoxEl.querySelector(`.word[data-i="${wi}"]`) as HTMLElement | null;
     if (!activeEl) return;
-    const rowTop = activeEl.offsetTop;
-    const lineHeight = 44;
-    if (rowTop - lineOffset > lineHeight * 1.4) {
-      lineOffset = rowTop - lineHeight;
-    }
+    // Keep the active word on the top visible row so the 2nd visible row is always look-ahead
+    lineOffset = activeEl.offsetTop;
   }
 
   function handleKeydown(e: KeyboardEvent) {
@@ -1186,7 +1183,7 @@
   .typing-arena {
     position: relative;
     font-family: var(--font-active, var(--font-mono));
-    padding: 1.5rem 1rem;
+    padding: 1.5rem 1.25rem;
     border-radius: 12px;
     background: var(--bg-2);
     border: 1px solid var(--border);
@@ -1194,19 +1191,23 @@
     user-select: none;
   }
   .words-viewport {
-    height: 132px;
+    --line-h: 1.85em;
+    height: calc(var(--line-h) * 2);
     overflow: hidden;
     position: relative;
   }
   .words-flow {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.35em 0.55em;
-    line-height: 44px;
+    gap: 0 0.55em;
+    line-height: var(--line-h);
     transition: transform 0.16s var(--ease);
   }
   .word {
     position: relative;
+    height: var(--line-h);
+    display: inline-flex;
+    align-items: center;
     color: var(--muted);
     border-bottom: 2px solid transparent;
   }

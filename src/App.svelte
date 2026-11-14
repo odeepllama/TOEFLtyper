@@ -70,7 +70,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    max-width: 1100px;
+    max-width: 1240px;
     margin: 0 auto;
     padding: 1.25rem 1.5rem;
   }
@@ -123,7 +123,7 @@
     color: var(--accent);
   }
   main {
-    max-width: 1100px;
+    max-width: 1240px;
     margin: 0 auto;
     padding: 0 1.5rem 3rem;
   }
