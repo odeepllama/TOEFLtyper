@@ -877,6 +877,44 @@
   {:else if lastResult}
     <!-- Results Screen -->
     <div class="results">
+      {#if testAwlWords.length > 0}
+        <div class="awl-review card">
+          <div class="awl-header">
+            <h3>Academic Word List (AWL) Vocabulary in This Test</h3>
+            <span class="sub">Hover or click any word to inspect its definition, sublist, and word family</span>
+          </div>
+          <div class="awl-chips">
+            {#each testAwlWords as item}
+              <button
+                class="awl-chip"
+                class:typed-ok={item.typedOk}
+                class:missed={item.missed}
+                class:selected={hoveredAwl?.w === item.entry.w}
+                onmouseenter={() => (hoveredAwl = item.entry)}
+                onclick={() => (hoveredAwl = item.entry)}
+              >
+                {item.entry.w}
+                <small>S{item.entry.s}</small>
+              </button>
+            {/each}
+          </div>
+          {#if hoveredAwl}
+            <div class="awl-detail">
+              <div class="awl-title">
+                <b>{hoveredAwl.w}</b>
+                <button class="pill" onclick={() => speakWord(hoveredAwl!.w)} title="Pronounce word">🔊 Speak</button>
+                <span class="badge">Sublist {hoveredAwl.s}</span>
+                {#if hoveredAwl.f.length}
+                  <span class="family">Family: {hoveredAwl.f.join(', ')}</span>
+                {/if}
+              </div>
+              <p class="def">{hoveredAwl.d}</p>
+              <p class="ex">“{hoveredAwl.e}”</p>
+            </div>
+          {/if}
+        </div>
+      {/if}
+
       <div class="res-top">
         <div class="hero-stats card">
           <div class="big-stat">
@@ -967,44 +1005,6 @@
                   <p class="finding-tip"><b>Prevention:</b> {f.preventionTip}</p>
                 </div>
               {/each}
-            </div>
-          {/if}
-        </div>
-      {/if}
-
-      {#if testAwlWords.length > 0}
-        <div class="awl-review card">
-          <div class="awl-header">
-            <h3>Academic Word List (AWL) Vocabulary in This Test</h3>
-            <span class="sub">Hover or click any word to inspect its definition, sublist, and word family</span>
-          </div>
-          <div class="awl-chips">
-            {#each testAwlWords as item}
-              <button
-                class="awl-chip"
-                class:typed-ok={item.typedOk}
-                class:missed={item.missed}
-                class:selected={hoveredAwl?.w === item.entry.w}
-                onmouseenter={() => (hoveredAwl = item.entry)}
-                onclick={() => (hoveredAwl = item.entry)}
-              >
-                {item.entry.w}
-                <small>S{item.entry.s}</small>
-              </button>
-            {/each}
-          </div>
-          {#if hoveredAwl}
-            <div class="awl-detail">
-              <div class="awl-title">
-                <b>{hoveredAwl.w}</b>
-                <button class="pill" onclick={() => speakWord(hoveredAwl!.w)} title="Pronounce word">🔊 Speak</button>
-                <span class="badge">Sublist {hoveredAwl.s}</span>
-                {#if hoveredAwl.f.length}
-                  <span class="family">Family: {hoveredAwl.f.join(', ')}</span>
-                {/if}
-              </div>
-              <p class="def">{hoveredAwl.d}</p>
-              <p class="ex">“{hoveredAwl.e}”</p>
             </div>
           {/if}
         </div>
