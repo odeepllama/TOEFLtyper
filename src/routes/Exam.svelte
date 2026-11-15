@@ -43,6 +43,7 @@
   let cwInputs = $state<Record<string, string[]>>({}); // itemId -> array of user completions
   let mcqAnswers = $state<Record<string, number>>({}); // questionId -> optionIdx
   let sentenceBuilt = $state<Record<string, number[]>>({}); // promptId -> ordered indices of chunks
+  let chunkPermutations = $state<Record<string, number[]>>({}); // promptId -> scrambled display order of chunk indices
   let emailDraft = $state('');
   let discussionDraft = $state('');
   let emailStartMs = 0;
@@ -225,6 +226,23 @@
     cwInputs = initCw;
     mcqAnswers = {};
     sentenceBuilt = {};
+
+    // Ensure every Build-a-Sentence item is presented in a scrambled order (never accidentally solved)
+    const initPerms: Record<string, number[]> = {};
+    for (const bs of currentTest.writing.buildSentences.items) {
+      const indices = bs.chunks.map((_, i) => i);
+      const endChar = bs.answer.trim().slice(-1);
+      for (let attempt = 0; attempt < 12; attempt++) {
+        indices.sort(() => Math.random() - 0.5);
+        const raw = indices.map((i) => bs.chunks[i]).join(' ');
+        const capped = raw.charAt(0).toUpperCase() + raw.slice(1);
+        const candidate = /[.?!]$/.test(capped) ? capped : capped + endChar;
+        if (candidate.toLowerCase() !== bs.answer.toLowerCase()) break;
+      }
+      initPerms[bs.id] = indices;
+    }
+    chunkPermutations = initPerms;
+
     emailDraft = '';
     discussionDraft = '';
     emailStartMs = 0;
@@ -846,13 +864,13 @@
             </div>
 
             <div class="bs-chunks">
-              {#each item.chunks as ch, ci}
+              {#each chunkPermutations[item.id] ?? item.chunks.map((_, i) => i) as ci}
                 <button
                   class="bs-chunk"
                   class:used={chosen.includes(ci)}
                   onclick={() => toggleChunk(item.id, ci)}
                 >
-                  {ch}
+                  {item.chunks[ci]}
                 </button>
               {/each}
             </div>

@@ -355,7 +355,7 @@ To address this, several global cities—including Stockholm, Singapore, and Lon
           {
             id: 'w1-bs-1',
             context: 'A student is asking a librarian about borrowing an archival map.',
-            chunks: ['could you tell me', 'whether', 'digitized copies of the map', 'are available online'],
+            chunks: ['are available online', 'digitized copies of the map', 'could you tell me', 'whether'],
             answer: 'Could you tell me whether digitized copies of the map are available online?',
             explanation:
               'Indirect questions use statement word order after "whether": subject ("digitized copies of the map") + verb ("are available online").',
@@ -363,7 +363,7 @@ To address this, several global cities—including Stockholm, Singapore, and Lon
           {
             id: 'w1-bs-2',
             context: 'An environmental scientist is summarizing the findings of a glacier study.',
-            chunks: ['not only did', 'the alpine glaciers retreat,', 'but meltwater runoff', 'also became more seasonal'],
+            chunks: ['but meltwater runoff', 'the alpine glaciers retreat,', 'also became more seasonal', 'not only did'],
             answer: 'Not only did the alpine glaciers retreat, but meltwater runoff also became more seasonal.',
             explanation:
               'When a sentence begins with negative/restrictive "Not only", the first clause uses subject-auxiliary inversion ("did the alpine glaciers retreat").',
@@ -371,7 +371,7 @@ To address this, several global cities—including Stockholm, Singapore, and Lon
           {
             id: 'w1-bs-3',
             context: 'A museum curator is explaining why a bronze statue was moved indoors.',
-            chunks: ['had the sculpture remained', 'in the courtyard,', 'acid rain would have', 'corroded its surface'],
+            chunks: ['acid rain would have', 'in the courtyard,', 'corroded its surface', 'had the sculpture remained'],
             answer: 'Had the sculpture remained in the courtyard, acid rain would have corroded its surface.',
             explanation:
               'Past unreal conditionals can omit "if" by inverting "Had" + subject + past participle, followed by "would have" + past participle.',
@@ -379,7 +379,7 @@ To address this, several global cities—including Stockholm, Singapore, and Lon
           {
             id: 'w1-bs-4',
             context: 'A department coordinator is updating students on seminar room assignments.',
-            chunks: ['the seminar originally scheduled', 'for Hall B', 'has been relocated', 'to the humanities annex'],
+            chunks: ['to the humanities annex', 'has been relocated', 'the seminar originally scheduled', 'for Hall B'],
             answer: 'The seminar originally scheduled for Hall B has been relocated to the humanities annex.',
             explanation:
               'The reduced relative clause "originally scheduled for Hall B" modifies "The seminar", followed by the present perfect passive verb "has been relocated".',
@@ -387,7 +387,7 @@ To address this, several global cities—including Stockholm, Singapore, and Lon
           {
             id: 'w1-bs-5',
             context: 'An economist is comparing two renewable energy subsidies.',
-            chunks: ['whereas solar rebates', 'target residential homeowners,', 'wind tax credits primarily', 'benefit utility-scale developers'],
+            chunks: ['wind tax credits primarily', 'target residential homeowners,', 'benefit utility-scale developers', 'whereas solar rebates'],
             answer: 'Whereas solar rebates target residential homeowners, wind tax credits primarily benefit utility-scale developers.',
             explanation:
               '"Whereas" introduces a subordinate contrast clause, followed by the main clause with subject "wind tax credits" and verb "benefit".',
@@ -736,7 +736,7 @@ To address this, several global cities—including Stockholm, Singapore, and Lon
           {
             id: 'w2-bs-1',
             context: 'A paleoclimatologist is explaining how ice cores preserve atmospheric history.',
-            chunks: ['trapped within glacial ice', 'are microscopic air bubbles', 'that record ancient', 'carbon dioxide levels'],
+            chunks: ['that record ancient', 'are microscopic air bubbles', 'carbon dioxide levels', 'trapped within glacial ice'],
             answer: 'Trapped within glacial ice are microscopic air bubbles that record ancient carbon dioxide levels.',
             explanation:
               'Participle phrase inversion ("Trapped within glacial ice") is followed by the main verb ("are") and subject ("microscopic air bubbles").',
@@ -744,7 +744,7 @@ To address this, several global cities—including Stockholm, Singapore, and Lon
           {
             id: 'w2-bs-2',
             context: 'An academic advisor is explaining prerequisites for an econometrics course.',
-            chunks: ['unless students have completed', 'introductory calculus,', 'they may not enroll', 'in advanced econometrics'],
+            chunks: ['they may not enroll', 'introductory calculus,', 'in advanced econometrics', 'unless students have completed'],
             answer: 'Unless students have completed introductory calculus, they may not enroll in advanced econometrics.',
             explanation:
               '"Unless" introduces the conditional clause, followed by the main clause "they may not enroll in advanced econometrics".',
@@ -752,7 +752,7 @@ To address this, several global cities—including Stockholm, Singapore, and Lon
           {
             id: 'w2-bs-3',
             context: 'An art historian is discussing the restoration of an oil painting.',
-            chunks: ['seldom have conservators', 'encountered a fresco', 'whose pigments remained', 'so remarkably vibrant'],
+            chunks: ['whose pigments remained', 'encountered a fresco', 'so remarkably vibrant', 'seldom have conservators'],
             answer: 'Seldom have conservators encountered a fresco whose pigments remained so remarkably vibrant.',
             explanation:
               'Negative adverb "Seldom" at the start of a sentence triggers auxiliary-subject inversion ("have conservators encountered").',
