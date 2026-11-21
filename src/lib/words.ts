@@ -107,17 +107,46 @@ function textStream(text: string, label: string, loop: boolean): WordStream {
   };
 }
 
-function sentenceStream(): WordStream {
-  const order = [...SENTENCES].sort(() => Math.random() - 0.5);
-  let si = 0;
+const SENTENCE_BAG_KEY = 'toefltyper.sentence_bag.v1';
+
+function shuffleIndices(len: number): number[] {
+  const arr = Array.from({ length: len }, (_, i) => i);
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
+}
+
+function nextBagIndex(bagKey: string, total: number): number {
+  if (total <= 0) return 0;
+  try {
+    const raw = localStorage.getItem(SENTENCE_BAG_KEY);
+    const bags: Record<string, number[]> = raw ? JSON.parse(raw) : {};
+    let q = Array.isArray(bags[bagKey]) ? bags[bagKey].filter((i) => i >= 0 && i < total) : [];
+    if (q.length === 0) q = shuffleIndices(total);
+    const idx = q.pop()!;
+    bags[bagKey] = q;
+    localStorage.setItem(SENTENCE_BAG_KEY, JSON.stringify(bags));
+    return idx;
+  } catch {
+    return Math.floor(Math.random() * total);
+  }
+}
+
+function sentenceStream(
+  items: { t: string; topic: string }[],
+  bagKey: string,
+  label: string,
+): WordStream {
   let buf: string[] = [];
   return {
     finite: false,
-    label: 'academic sentences',
+    label,
     next(n) {
       while (buf.length < n) {
-        buf.push(...order[si % order.length].t.split(/\s+/));
-        si++;
+        const idx = nextBagIndex(bagKey, items.length);
+        buf.push(...items[idx].t.split(/\s+/));
       }
       return buf.splice(0, n);
     },
@@ -148,7 +177,36 @@ export function createStream(s: Settings): { stream: WordStream; notice?: string
       };
     }
     case 'sentences':
-      return { stream: sentenceStream() };
+      return { stream: sentenceStream(SENTENCES, 'all', 'academic sentences') };
+    case 'sentences_awl': {
+      const targetSet = new Set(awlPool(s).map((w) => w.toLowerCase()));
+      const matched = SENTENCES.filter((item) =>
+        item.t
+          .toLowerCase()
+          .split(/[^a-z-]+/)
+          .some((tok) => tok && targetSet.has(tok)),
+      );
+      const subsKey = (s.sublists.length ? [...s.sublists].sort((a, b) => a - b) : [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]).join(',');
+      if (!matched.length) {
+        return {
+          stream: sentenceStream(SENTENCES, 'all', 'academic sentences'),
+          notice: 'No sentences matched the selected AWL sublists; showing all academic sentences.',
+        };
+      }
+      return {
+        stream: sentenceStream(
+          matched,
+          `awl:${subsKey}:${s.families ? 1 : 0}`,
+          `sentences + AWL (${matched.length})`,
+        ),
+      };
+    }
+    case 'sprint': {
+      const pool = COMMON.filter((w) => w.length >= 2 && w.length <= 4 && /^[a-z]+$/.test(w)).slice(0, 250);
+      return {
+        stream: poolStream(() => pick(pool), { ...s, punctuation: false }, 'sprint (short words)'),
+      };
+    }
     case 'custom': {
       const text = s.customText.trim();
       if (!text) {

@@ -29,6 +29,7 @@ export interface TestResult {
   limit: number; // seconds or words (0 for zen)
   source: Source;
   punctuation: boolean;
+  unranked?: boolean;
   wpm: number;
   raw: number;
   acc: number;
@@ -63,7 +64,42 @@ const K = {
   keys: 'toefltyper.keys.v1',
   weak: 'toefltyper.weak.v1',
   cloudCache: 'toefltyper.cloud_board.v1',
+  sprint: 'toefltyper.sprint.v1',
 };
+
+export const SPRINT_MAX_TOKENS = 5;
+export const SPRINT_RUNS_PER_TOKEN = 10;
+
+export interface SprintState {
+  completedCount: number;
+  tokens: number;
+  bestWpm: number;
+  bestAcc: number;
+}
+
+export function getSprintState(): SprintState {
+  try {
+    const raw = localStorage.getItem(K.sprint);
+    if (!raw) return { completedCount: 0, tokens: 0, bestWpm: 0, bestAcc: 0 };
+    const parsed = JSON.parse(raw) as Partial<SprintState>;
+    return {
+      completedCount: Math.max(0, Number(parsed.completedCount) || 0),
+      tokens: Math.min(SPRINT_MAX_TOKENS, Math.max(0, Number(parsed.tokens) || 0)),
+      bestWpm: Math.max(0, Number(parsed.bestWpm) || 0),
+      bestAcc: Math.max(0, Number(parsed.bestAcc) || 0),
+    };
+  } catch {
+    return { completedCount: 0, tokens: 0, bestWpm: 0, bestAcc: 0 };
+  }
+}
+
+function saveSprintState(s: SprintState) {
+  try {
+    localStorage.setItem(K.sprint, JSON.stringify(s));
+  } catch {
+    // ignore storage quota errors
+  }
+}
 
 const MAX_HISTORY = 2000;
 
@@ -116,6 +152,30 @@ export function bestFor(r: Pick<TestResult, 'mode' | 'limit' | 'source' | 'punct
 }
 
 export function saveResult(r: TestResult) {
+  if (r.unranked || r.source === 'sprint') {
+    if (r.wpm > 0) {
+      const sp = getSprintState();
+      sp.tokens = Math.max(0, sp.tokens - 1);
+      if (r.wpm > sp.bestWpm) {
+        sp.bestWpm = r.wpm;
+        sp.bestAcc = r.acc;
+      } else if (r.wpm === sp.bestWpm && r.acc > sp.bestAcc) {
+        sp.bestAcc = r.acc;
+      }
+      saveSprintState(sp);
+    }
+    return;
+  }
+
+  if (r.wpm > 0) {
+    const sp = getSprintState();
+    sp.completedCount += 1;
+    if (sp.completedCount % SPRINT_RUNS_PER_TOKEN === 0 && sp.tokens < SPRINT_MAX_TOKENS) {
+      sp.tokens += 1;
+    }
+    saveSprintState(sp);
+  }
+
   const { samples: _s, keys, missed, ...summary } = r;
   const hist = getHistory();
   hist.push(summary);

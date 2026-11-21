@@ -3,7 +3,17 @@
   import { settings, rerollWatchAlias, type Mode, type Source, type SoundPack } from '../lib/settings.svelte';
   import { createStream, lookupAwl, type AwlEntry, type WordStream } from '../lib/words';
   import { playClick, SOUND_PACKS } from '../lib/sound';
-  import { saveResult, bestFor, type TestResult, type Sample, type KeyStat } from '../lib/storage';
+  import {
+    saveResult,
+    bestFor,
+    getSprintState,
+    SPRINT_MAX_TOKENS,
+    SPRINT_RUNS_PER_TOKEN,
+    type SprintState,
+    type TestResult,
+    type Sample,
+    type KeyStat,
+  } from '../lib/storage';
   import { analyzeKeystrokeTelemetry, type KeyEventLog, type TelemetryReport } from '../lib/diagnostics';
   import LineChart from '../components/LineChart.svelte';
   import Keyboard from '../components/Keyboard.svelte';
@@ -51,6 +61,7 @@
   let prevBest = $state<TestResult | null>(null);
   let isNewPb = $state(false);
   let hoveredAwl = $state<AwlEntry | null>(null);
+  let sprint = $state<SprintState>(getSprintState());
 
   // DOM refs for scrolling & caret
   let wordsBoxEl = $state<HTMLElement | null>(null);
@@ -217,7 +228,8 @@
       mode: settings.mode,
       limit,
       source: settings.source,
-      punctuation: settings.punctuation,
+      punctuation: settings.source === 'sprint' ? false : settings.punctuation,
+      unranked: settings.source === 'sprint' ? true : undefined,
       wpm: finalWpm,
       raw: finalRaw,
       acc: finalAcc,
@@ -232,9 +244,20 @@
       slowestKeys: report.hesitationKeys.slice(0, 4).map((h) => ({ key: h.key, avgMs: h.avgMs })),
     };
 
-    prevBest = bestFor(res);
-    isNewPb = !prevBest || res.wpm > prevBest.wpm;
-    saveResult(res);
+    if (res.unranked || res.source === 'sprint') {
+      prevBest = null;
+      isNewPb = res.wpm > 0 && res.wpm > sprint.bestWpm;
+      saveResult(res);
+      sprint = getSprintState();
+      if (sprint.tokens <= 0) {
+        settings.source = 'mixed';
+      }
+    } else {
+      prevBest = bestFor(res);
+      isNewPb = !prevBest || res.wpm > prevBest.wpm;
+      saveResult(res);
+      sprint = getSprintState();
+    }
     lastResult = res;
 
     // Default inspect first missed AWL word or the first AWL word in the test
@@ -451,8 +474,21 @@
     initTest();
   }
   function setSource(s: Source) {
-    settings.source = s;
-    if (s === 'custom') showCustom = true;
+    if (s === 'awl') {
+      if (settings.source === 'sentences') settings.source = 'sentences_awl';
+      else if (settings.source === 'sentences_awl') settings.source = 'sentences';
+      else settings.source = 'awl';
+    } else if (s === 'sentences') {
+      if (settings.source === 'awl') settings.source = 'sentences_awl';
+      else if (settings.source === 'sentences_awl') settings.source = 'awl';
+      else settings.source = 'sentences';
+    } else if (s === 'sprint') {
+      if (sprint.tokens <= 0 && settings.source !== 'sprint') return;
+      settings.source = 'sprint';
+    } else {
+      settings.source = s;
+    }
+    if (settings.source === 'custom') showCustom = true;
     initTest();
   }
   function toggleSublist(n: number) {
@@ -491,6 +527,10 @@
   }
 
   onMount(() => {
+    sprint = getSprintState();
+    if (settings.source === 'sprint' && sprint.tokens <= 0) {
+      settings.source = 'mixed';
+    }
     initTest();
   });
   onDestroy(() => {
@@ -585,18 +625,32 @@
 
     <div class="group">
       <button class:on={settings.source === 'mixed'} onclick={() => setSource('mixed')}>mixed AWL</button>
-      <button class:on={settings.source === 'awl'} onclick={() => setSource('awl')}>AWL 570</button>
-      <button class:on={settings.source === 'sentences'} onclick={() => setSource('sentences')}>sentences</button>
+      <button
+        class:on={settings.source === 'awl' || settings.source === 'sentences_awl'}
+        onclick={() => setSource('awl')}
+        title="Academic Word List (combine with sentences for AWL sentences)"
+      >AWL 570</button>
+      <button
+        class:on={settings.source === 'sentences' || settings.source === 'sentences_awl'}
+        onclick={() => setSource('sentences')}
+        title="Academic sentences (combine with AWL 570 to filter by selected sublists)"
+      >sentences</button>
       <button class:on={settings.source === 'common200'} onclick={() => setSource('common200')}>top 200</button>
       <button class:on={settings.source === 'common1000'} onclick={() => setSource('common1000')}>top 1k</button>
       <button class:on={settings.source === 'weak'} onclick={() => setSource('weak')}>weak words</button>
       <button class:on={settings.source === 'custom'} onclick={() => setSource('custom')}>custom</button>
+      <button
+        class:on={settings.source === 'sprint'}
+        disabled={sprint.tokens <= 0 && settings.source !== 'sprint'}
+        onclick={() => setSource('sprint')}
+        title={`Unranked short-word sprint (${sprint.completedCount % SPRINT_RUNS_PER_TOKEN}/${SPRINT_RUNS_PER_TOKEN} ranked runs toward next token, max ${SPRINT_MAX_TOKENS})`}
+      >⚡ sprint ({sprint.tokens}/{SPRINT_MAX_TOKENS})</button>
     </div>
 
     <span class="sep"></span>
 
     <div class="group">
-      {#if settings.source === 'awl' || settings.source === 'mixed'}
+      {#if settings.source === 'awl' || settings.source === 'mixed' || settings.source === 'sentences_awl'}
         <button class:on={showSublists} onclick={() => (showSublists = !showSublists)}>
           sublists ({settings.sublists.length}/10)
         </button>
@@ -608,7 +662,7 @@
   </div>
 
   <!-- Sublist & Ratio Drawer -->
-  {#if showSublists && (settings.source === 'awl' || settings.source === 'mixed')}
+  {#if showSublists && (settings.source === 'awl' || settings.source === 'mixed' || settings.source === 'sentences_awl')}
     <div class="drawer card">
       <div class="drawer-row">
         <span class="sub">Coxhead AWL Sublists:</span>
@@ -918,7 +972,7 @@
       <div class="res-top">
         <div class="hero-stats card">
           <div class="big-stat">
-            <span class="lbl">wpm {#if isNewPb}<span class="pb-badge">NEW PB</span>{/if}</span>
+            <span class="lbl">wpm {#if lastResult.unranked || lastResult.source === 'sprint'}<span class="pb-badge" title="Unranked sprint — not posted to leaderboard">UNRANKED SPRINT</span>{/if}{#if isNewPb}<span class="pb-badge">NEW PB</span>{/if}</span>
             <span class="big accent">{lastResult.wpm}</span>
           </div>
           <div class="big-stat">

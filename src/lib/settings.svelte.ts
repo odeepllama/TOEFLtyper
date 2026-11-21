@@ -1,6 +1,6 @@
 // Persistent user settings (localStorage), using Svelte 5 runes.
 
-export type Source = 'common200' | 'common1000' | 'awl' | 'mixed' | 'sentences' | 'weak' | 'custom';
+export type Source = 'common200' | 'common1000' | 'awl' | 'mixed' | 'sentences' | 'sentences_awl' | 'sprint' | 'weak' | 'custom';
 export type Mode = 'time' | 'words' | 'zen';
 export type SoundPack =
   | 'mechanical'
